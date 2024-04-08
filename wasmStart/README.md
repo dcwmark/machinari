@@ -1,15 +1,16 @@
 
+Sets up a new `AssemblyScript` project or updates an existing one.
 
-Sets up a new [AssemblyScript] project or updates an existing one.
-
-SYNTAX
+#### SYNTAX
   asinit directory [options]
 
-EXAMPLES
+#### EXAMPLES
   asinit .
+  
   asinit ./newProject -y
 
-OPTIONS
+#### OPTIONS
   --help, -h            Prints this help message.
+  
   --yes, -y             Answers all questions with their default option
                         for non-interactive usage.
