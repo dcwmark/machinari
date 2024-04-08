@@ -1,4 +1,4 @@
-// machinari/node/fib.js
+// machinari/node/fib.mjs
 
 'use strict';
 
@@ -18,6 +18,9 @@ const fib = (n) => {
 }
 
 let iter = process.env.fibIter;
-fib(iter);
 
+console.time(`${process.argv[1]}`);
+fib(iter);
 console.log('\n');
+console.timeEnd(`${process.argv[1]}`);
+
