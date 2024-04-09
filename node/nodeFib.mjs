@@ -19,8 +19,8 @@ const fib = (n) => {
 
 let iter = process.env.fibIter;
 
-console.time(`${process.argv[1]}`);
+const tallyHo = process.argv[1];
+console.time(`${tallyHo}`);
 fib(iter);
 console.log('\n');
-console.timeEnd(`${process.argv[1]}`);
-
+console.timeEnd(`${tallyHo}`);
