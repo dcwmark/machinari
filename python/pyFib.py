@@ -23,7 +23,6 @@ def fib(n):
 
 # Get the name of the script
 tally_ho = sys.argv[0]
-print(tally_ho)
 
 import time
 start_time = time.time()

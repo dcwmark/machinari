@@ -4,7 +4,9 @@
 
 import 'dotenv/config';
 
-const fibIterRecursive = (n, a, b) => {
+const fibIterRecursive = (n, x, y) => {
+  const a = BigInt(x);
+  const b = BigInt(y);
   if (n === 0) {
     return b;
   } else {
@@ -17,10 +19,10 @@ const fib = (n) => {
   return fibIterRecursive(n, 1, 0);
 }
 
-let iter = process.env.fibIter;
+const fibIter = parseInt(process.env.fibIter);
 
 const tallyHo = process.argv[1];
 console.time(`${tallyHo}`);
-fib(iter);
+fib(fibIter);
 console.log('\n');
 console.timeEnd(`${tallyHo}`);
