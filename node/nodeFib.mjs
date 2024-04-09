@@ -1,4 +1,4 @@
-// machinari/node/fib.mjs
+// machinari/node/nodeFib.mjs
 
 'use strict';
 
