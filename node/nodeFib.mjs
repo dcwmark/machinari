@@ -17,7 +17,7 @@ const fibIterRecursive = (n, x, y) => {
 
 const fib = (n) => {
   return fibIterRecursive(n, 1, 0);
-}
+};
 
 const fibIter = parseInt(process.env.fibIter);
 
