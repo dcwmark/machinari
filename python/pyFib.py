@@ -7,9 +7,6 @@ import sys
 from dotenv import load_dotenv # type: ignore
 load_dotenv()
 
-# fibIter = int(os.environ.get("fibIter"))
-# fibIter = 99
-
 def fib_iter_recursive(n, a, b):
     if n == 0:
         return b
@@ -28,4 +25,4 @@ import time
 start_time = time.time()
 fib(fibIter)
 print('\n')
-print("--- %s ms ---" % ((time.time() - start_time) * 1000))
+print("%s --- %s ms ---" % (tally_ho, (time.time() - start_time) * 1000))
