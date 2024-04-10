@@ -7,11 +7,12 @@ import sys
 from dotenv import load_dotenv # type: ignore
 load_dotenv()
 
+aFib = []
 def fib_iter_recursive(n, a, b):
     if n == 0:
         return b
     else:
-        print(str(b), end=' ')
+        aFib.append(b)
         return fib_iter_recursive(n-1, a + b, a)
 
 fibIter = int(os.getenv('fibIter'))
@@ -24,5 +25,6 @@ tally_ho = sys.argv[0]
 import time
 start_time = time.time()
 fib(fibIter)
-print('\n')
 print("%s --- %s ms ---" % (tally_ho, (time.time() - start_time) * 1000))
+print(aFib)
+

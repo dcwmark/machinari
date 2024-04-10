@@ -24,8 +24,7 @@ const fibIter = parseInt(process.env.fibIter);
 
 const tallyHo = process.argv[1];
 console.time(`${tallyHo}`);
-const result = fib(fibIter);
+fib(fibIter);
 console.timeEnd(`${tallyHo}`);
-console.log('\n');
 console.log(aFib.join(', '));
 
