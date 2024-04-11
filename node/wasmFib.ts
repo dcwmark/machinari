@@ -2,12 +2,13 @@
 
 'use strict';
 
-const dotenv = 'dotenv';
-dotenv.config();
+import * as dotenv from "dotenv";
 
-const { asFib } = require('../WebAssembly/AssemblyScript/build/release.js');
+import { asFib } from '../WebAssembly/AssemblyScript/build/release.js';
 
-const fib = (n: bigint): bigint => {
+dotenv.config({ path: __dirname+'/.env' });
+
+const fib = (n: bigint): bigint[] => {
   return asFib(n, BigInt(1), BigInt(0)); // Correctly using BigInts here
 };
 
