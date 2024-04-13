@@ -10,10 +10,11 @@ load_dotenv()
 aFib = []
 def fib_iter_recursive(n, a, b):
     if n == 0:
+        aFib.append(b)
         return b
     else:
         aFib.append(b)
-        return fib_iter_recursive(n-1, a + b, a)
+        return fib_iter_recursive(n - 1, a + b, a)
 
 fibIter = int(os.getenv('fibIter'))
 def fib(n):

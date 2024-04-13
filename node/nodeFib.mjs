@@ -9,6 +9,7 @@ const fibIterRecursive = (n, x, y) => {
   const a = BigInt(x);
   const b = BigInt(y);
   if (n === 0) {
+    aFib.push(b);
     return b;
   } else {
     aFib.push(b);
