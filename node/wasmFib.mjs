@@ -10,14 +10,9 @@ const fib = (n)=> {
   return asFib(n, BigInt(1), BigInt(0)); // Correctly using BigInts here
 };
 
-const fibIterStr = process.env.fibIter;
-if (!fibIterStr) {
-  console.error("Environment variable 'fibIter' not set.");
-  process.exit(1);
-}
-
-const fibIter = BigInt(fibIterStr);
-const tallyHo = process.argv[1];
+const intFibIter = parseInt(process.env.fibIter);
+const fibIter = BigInt(intFibIter);
+const tallyHo = `${process.argv[1]} (${fibIter})`;
 console.time(`${tallyHo}`);
 const result = fib(fibIter);
 console.log('\n');

@@ -22,7 +22,7 @@ const fib = (n) => {
 
 const fibIter = parseInt(process.env.fibIter);
 
-const tallyHo = process.argv[1];
+const tallyHo = `${process.argv[1]} (${fibIter})`;
 console.time(`${tallyHo}`);
 fib(fibIter);
 console.timeEnd(`${tallyHo}`);

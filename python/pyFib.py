@@ -20,7 +20,7 @@ def fib(n):
     return fib_iter_recursive(n, 1, 0)
 
 # Get the name of the script
-tally_ho = sys.argv[0]
+tally_ho = sys.argv[0] + ' (' + str(fibIter) + ')'
 
 import time
 start_time = time.time()
