@@ -12,7 +12,7 @@ const fibIterRecursive = (n, x, y) => {
     return b;
   } else {
     aFib.push(b);
-    return fibIterRecursive(n-1, a + b, a);
+    return fibIterRecursive(n - 1, a + b, a);
   }
 };
 

@@ -1,4 +1,5 @@
 {
+  "type": "module",
   "dependencies": {
     "@assemblyscript/loader": "^0.27.26",
     "dotenv": "^16.4.5",

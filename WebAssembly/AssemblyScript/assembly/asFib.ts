@@ -9,7 +9,7 @@ function fibIterRecursive(n: i64, a: i64, b: i64): i64[] {
     return aFib;
   } else {
     aFib.push(b);
-    return fibIterRecursive(n-1, a + b, a);
+    return fibIterRecursive(n - 1, a + b, a);
   }
 }
 
