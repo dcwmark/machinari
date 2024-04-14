@@ -2,7 +2,10 @@
 
 import os
 import sys
-
+# Need to set this recursion limit
+# because Python has a default recursion limit
+# (usually 1000) to prevent infinite recursion
+# from causing stack overflow and crashing the program.
 sys.setrecursionlimit(1500)
 
 # Load environment variables from .env file
