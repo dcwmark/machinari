@@ -3,6 +3,8 @@
 import os
 import sys
 
+sys.setrecursionlimit(1500)
+
 # Load environment variables from .env file
 from dotenv import load_dotenv # type: ignore
 load_dotenv()
