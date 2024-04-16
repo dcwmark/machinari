@@ -17,4 +17,5 @@ console.time(`${tallyHo}`);
 const result = fib(fibIter);
 console.log('\n');
 console.timeEnd(`${tallyHo}`);
-console.log(result.join(', '));
+console.log(result);
+// console.log(result.join(', '));
