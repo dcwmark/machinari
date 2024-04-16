@@ -3,7 +3,7 @@
 'use strict';
 
 const aFib: i64[] = [];
-function fibIterRecursive(n: i64, a: i64, b: i64): void {
+function fibIter(n: i64, a: i64, b: i64): void {
   aFib.push(b);
   aFib.push(a);
   while(aFib.length < n) {
@@ -12,6 +12,6 @@ function fibIterRecursive(n: i64, a: i64, b: i64): void {
 }
 
 export function asFib(n: i64, a:i64, b:i64): i64[] {
-  fibIterRecursive(n, a, b);
+  fibIter(n, a, b);
   return aFib;
 }
