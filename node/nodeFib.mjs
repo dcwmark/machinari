@@ -5,20 +5,16 @@
 import 'dotenv/config';
 
 const aFib = [];
-const fibIterRecursive = (n, x, y) => {
-  const a = BigInt(x);
-  const b = BigInt(y);
-  if (n === 0) {
-    aFib.push(b);
-    return b;
-  } else {
-    aFib.push(b);
-    return fibIterRecursive(n - 1, a + b, a);
+const fibIterate = (n, a = 1, b = 0) => {
+  aFib.push(BigInt(b));
+  aFib.push(BigInt(a));
+  while(aFib.length < n) {
+    aFib.push(BigInt(aFib[aFib.length - 1]) + BigInt(aFib[aFib.length - 2]));
   }
 };
 
 const fib = (n) => {
-  return fibIterRecursive(n, 1, 0);
+  return fibIterate(n, 1, 0);
 };
 
 const fibIter = parseInt(process.env.fibIter);

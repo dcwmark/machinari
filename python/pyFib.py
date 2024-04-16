@@ -6,24 +6,22 @@ import sys
 # because Python has a default recursion limit
 # (usually 1000) to prevent infinite recursion
 # from causing stack overflow and crashing the program.
-sys.setrecursionlimit(1500)
+sys.setrecursionlimit(1000000)
 
 # Load environment variables from .env file
 from dotenv import load_dotenv # type: ignore
 load_dotenv()
 
 aFib = []
-def fib_iter_recursive(n, a, b):
-    if n == 0:
-        aFib.append(b)
-        return b
-    else:
-        aFib.append(b)
-        return fib_iter_recursive(n - 1, a + b, a)
+def fib_iterate(n, a, b):
+    aFib.append(b)
+    aFib.append(a)
+    while len(aFib) < n:
+        aFib.append(aFib[len(aFib) - 1] + aFib[len(aFib) - 2])
 
 fibIter = int(os.getenv('fibIter'))
 def fib(n):
-    return fib_iter_recursive(n, 1, 0)
+    return fib_iterate(n, 1, 0)
 
 # Get the name of the script
 tally_ho = sys.argv[0] + ' (' + str(fibIter) + ')'
