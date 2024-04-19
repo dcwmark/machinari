@@ -30,5 +30,10 @@ import time
 start_time = time.time()
 fib(fibIter)
 print("%s --- %s ms ---" % (tally_ho, (time.time() - start_time) * 1000))
-print(aFib)
+# print(aFib)
+output_file = open('pyFib.txt', 'w')
+for each in aFib:
+    output_file.write(str(each) + '\n')
+output_file.close()
+
 

@@ -2,6 +2,7 @@
 
 'use strict';
 
+import fs from 'fs';
 import 'dotenv/config';
 
 const aFib = [];
@@ -23,5 +24,13 @@ const tallyHo = `${process.argv[1]} (${fibIter})`;
 console.time(`${tallyHo}`);
 fib(fibIter);
 console.timeEnd(`${tallyHo}`);
-console.log(aFib.join(', '));
+// console.log(aFib.join(', '));
+const arrStr = aFib.map(each => each.toString());
+fs.writeFile('nodeFib.txt', arrStr.join('\n'), (err) => {
+  if (err) {
+    console.error(`Error in writing file `, err);
+  } else {
+    console.log('Done!');
+  }
+});
 
