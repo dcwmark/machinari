@@ -33,7 +33,7 @@ start_time = time.time()
 fib(fibIter)
 print("%s --- %s ms ---" % (tally_ho, (time.time() - start_time) * 1000))
 
-print('.env fibIter:: %s -vs- aFib size:: %s' % (fibIter, len(aFib)))
+print('\n.env fibIter:: %s -vs- aFib size:: %s' % (fibIter, len(aFib)))
 
 # Get the current file name
 file_name = os.path.basename(__file__)
@@ -49,7 +49,7 @@ with open(out_file_name, 'w') as out_file:
     for each in aFib:
         out_file.write(str(each) + '\n')
 
-    print(f"File out: {out_file_name}")
+    print(f"\nFile out: {out_file_name}")
 
 # Define the command and arguments
 command = ['wc', '-l', out_file_name]

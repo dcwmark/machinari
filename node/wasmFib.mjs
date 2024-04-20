@@ -21,7 +21,7 @@ const aFib = fib(fibIter);
 console.log('\n');
 console.timeEnd(`${tallyHo}`);
 
-console.log(`.env fibIter:: ${fibIter} -vs- aFib size:: ${aFib.length}`);
+console.log(`\n.env fibIter:: ${fibIter} -vs- aFib size:: ${aFib.length}`);
 
 const arrStr = aFib.map(each => each.toString());
 const filePath = fileURLToPath(import.meta.url).split('/');
@@ -29,9 +29,9 @@ const fileName = filePath[filePath.length - 1];
 const outFileName = `${fileName.split('.')[0]}.txt`;
 try {
   fs.writeFileSync(outFileName, arrStr.join('\n') + '\n');
-  console.log(`File out:: ${outFileName}`);
+  console.log(`\nFile out:: ${outFileName}`);
 } catch (err) {
-  console.error(`Error in writing file `, err);
+  console.error(`\nError in writing file `, err);
 }
 
 const wc = spawn('wc', ['-l', outFileName]);
