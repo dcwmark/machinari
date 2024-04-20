@@ -10,11 +10,11 @@ import { fileURLToPath } from 'url';
 import { asFib } from '../WebAssembly/AssemblyScript/build/release.js';
 
 const fib = (n)=> {
-  return asFib(n, BigInt(1), BigInt(0)); // Correctly using BigInts here
+  return asFib(BigInt(n), BigInt(1), BigInt(0));
 };
 
-const intFibIter = parseInt(process.env.fibIter);
-const fibIter = BigInt(intFibIter);
+const fibIter = parseInt(process.env.fibIter);
+
 const tallyHo = `${process.argv[1]} (${fibIter})`;
 console.time(`${tallyHo}`);
 const aFib = fib(fibIter);
