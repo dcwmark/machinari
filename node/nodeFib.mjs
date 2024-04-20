@@ -32,7 +32,7 @@ console.log(`\n.env fibIter:: ${fibIter} -vs- aFib size:: ${aFib.length}`);
 const arrStr = aFib.map(each => each.toString());
 const filePath = fileURLToPath(import.meta.url).split('/');
 const fileName = filePath[filePath.length - 1];
-const outFileName = `${fileName.split('.')[0]}.txt`;
+const outFileName = `${fileName.split('.')[0]}.dat`;
 try {
   fs.writeFileSync(outFileName, arrStr.join('\n') + '\n');
   console.log(`\nFile out:: ${outFileName}`);

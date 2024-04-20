@@ -42,7 +42,7 @@ file_name = os.path.basename(__file__)
 file_name_without_extension = os.path.splitext(file_name)[0]
 
 # Define the output file name
-out_file_name = f"{file_name_without_extension}.txt"
+out_file_name = f"{file_name_without_extension}.dat"
 
 # Write arrStr to the output file
 with open(out_file_name, 'w') as out_file:
