@@ -33,13 +33,12 @@ const arrStr = aFib.map(each => each.toString());
 const filePath = fileURLToPath(import.meta.url).split('/');
 const fileName = filePath[filePath.length - 1];
 const outFileName = `${fileName.split('.')[0]}.txt`;
-fs.writeFileSync(outFileName, arrStr.join('\n'), (err) => {
-  if (err) {
-    console.error(`Error in writing file `, err);
-  } else {
-    console.log(`File out:: ${outFileName}`);
-  }
-});
+try {
+  fs.writeFileSync(outFileName, arrStr.join('\n'));
+  console.log(`File out:: ${outFileName}`);
+} catch (err) {
+  console.error(`Error in writing file `, err);
+}
 
 const wc = spawn('wc', ['-l', outFileName]);
 wc.stdout.on('data', (data) => {
