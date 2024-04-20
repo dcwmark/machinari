@@ -34,7 +34,7 @@ const filePath = fileURLToPath(import.meta.url).split('/');
 const fileName = filePath[filePath.length - 1];
 const outFileName = `${fileName.split('.')[0]}.txt`;
 try {
-  fs.writeFileSync(outFileName, arrStr.join('\n'));
+  fs.writeFileSync(outFileName, arrStr.join('\n') + '\n');
   console.log(`File out:: ${outFileName}`);
 } catch (err) {
   console.error(`Error in writing file `, err);
