@@ -18,7 +18,6 @@ const fibIter = parseInt(process.env.fibIter);
 const tallyHo = `${process.argv[1]} (${fibIter})`;
 console.time(`${tallyHo}`);
 const aFib = fib(fibIter);
-console.log('\n');
 console.timeEnd(`${tallyHo}`);
 
 console.log(`\n.env fibIter:: ${fibIter} -vs- aFib size:: ${aFib.length}`);
