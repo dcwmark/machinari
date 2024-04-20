@@ -2,6 +2,8 @@
 
 import os
 import sys
+import subprocess
+
 # Need to set this recursion limit
 # because Python has a default recursion limit
 # (usually 1000) to prevent infinite recursion
@@ -30,10 +32,39 @@ import time
 start_time = time.time()
 fib(fibIter)
 print("%s --- %s ms ---" % (tally_ho, (time.time() - start_time) * 1000))
-# print(aFib)
-output_file = open('pyFib.txt', 'w')
-for each in aFib:
-    output_file.write(str(each) + '\n')
-output_file.close()
 
+print('.env fibIter:: %s -vs- aFib size:: %s' % (fibIter, len(aFib)))
 
+# Get the current file name
+file_name = os.path.basename(__file__)
+
+# Extract the file name without extension
+file_name_without_extension = os.path.splitext(file_name)[0]
+
+# Define the output file name
+out_file_name = f"{file_name_without_extension}.txt"
+
+# Write arrStr to the output file
+with open(out_file_name, 'w') as out_file:
+    for each in aFib:
+        out_file.write(str(each) + '\n')
+
+    print(f"File out: {out_file_name}")
+
+# Define the command and arguments
+command = ['wc', '-l', out_file_name]
+
+# Execute the command
+wc = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+
+# Read the output and error streams
+stdout, stderr = wc.communicate()
+
+# Print the stdout and stderr
+if stdout:
+    print(f"wc:stdout -l {stdout.decode()}")
+if stderr:
+    print(f"wc:stderr -l {stderr.decode()}")
+
+# Print the exit code
+print(f"wc -l exited with code {wc.returncode}")

@@ -27,7 +27,7 @@ console.time(`${tallyHo}`);
 fib(fibIter);
 console.timeEnd(`${tallyHo}`);
 
-console.log(`.env fibIter:: ${fibIter} -vs- aFib size::${aFib.length}`);
+console.log(`.env fibIter:: ${fibIter} -vs- aFib size:: ${aFib.length}`);
 
 const arrStr = aFib.map(each => each.toString());
 const filePath = fileURLToPath(import.meta.url).split('/');
