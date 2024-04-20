@@ -62,9 +62,9 @@ stdout, stderr = wc.communicate()
 
 # Print the stdout and stderr
 if stdout:
-    print(f"wc:stdout -l {stdout.decode()}")
+    print(f"wc<stdout> -l {stdout.decode()}")
 if stderr:
-    print(f"wc:stderr -l {stderr.decode()}")
+    print(f"wc<stderr> -l {stderr.decode()}")
 
 # Print the exit code
 print(f"wc -l exited with code {wc.returncode}")

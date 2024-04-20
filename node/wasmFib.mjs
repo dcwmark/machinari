@@ -38,10 +38,10 @@ fs.writeFileSync(outFileName, arrStr.join('\n'), (err) => {
 
 const wc = spawn('wc', ['-l', outFileName]);
 wc.stdout.on('data', (data) => {
-  console.log(`wc:stdout -l ${data}`);
+  console.log(`wc<stdout> -l ${data}`);
 });
 wc.stderr.on('data', (data) => {
-  console.error(`wc:stderr -l ${data}`);
+  console.error(`wc:<stderr> -l ${data}`);
 });
 wc.on('close', (code) => {
   console.log(`wc -l exited with code ${code}`);
