@@ -10,7 +10,7 @@ import { fileURLToPath } from 'url';
 import { asFib } from '../WebAssembly/AssemblyScript/build/release.js';
 
 const fib = (n)=> {
-  return asFib(BigInt(n), BigInt(1), BigInt(0));
+  return asFib(n, 1, 0);
 };
 
 const fibIter = parseInt(process.env.fibIter);
