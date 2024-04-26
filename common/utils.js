@@ -2,6 +2,11 @@
 
 const utils = {};
 
+utils.nulldef = (obj) => {
+  return Object.is(obj, null)
+      || Object.is(obj, undefined);
+};
+
 // Helper function to add two strings representing integers
 utils.addStrings = (a, b) => {
   let result = '';

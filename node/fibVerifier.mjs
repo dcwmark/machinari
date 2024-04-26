@@ -1,4 +1,4 @@
-// node/fibVerifier.js
+// node/fibVerifier.mjs
 
 'use strict';
 
@@ -8,8 +8,7 @@ import utils from '../common/utils.js';
 
 const fileName = process.argv[2];
 try {
-  if (Object.is(fileName, null) ||
-      Object.is(fileName, undefined)) {
+  if (utils.nulldef(fileName)) {
     throw new Error(`Missing file name!
       Usage: fibVerifier <file to be verified>
     `);
