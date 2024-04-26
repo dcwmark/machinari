@@ -49,10 +49,10 @@ function addStrings(a: string, b: string): string {
 
   for (let i: i32 = 0; i < maxLength || carry !== 0; i++) {
       let digitA = i < a.length
-                ? a.charCodeAt(a.length - 1 - i) - "0".charCodeAt(0)
+                ? a.charCodeAt(a.length - 1 - i) - '0'.charCodeAt(0)
                 : 0;
       let digitB = i < b.length
-                ? b.charCodeAt(b.length - 1 - i) - "0".charCodeAt(0)
+                ? b.charCodeAt(b.length - 1 - i) - '0'.charCodeAt(0)
                 : 0;
 
       sum = digitA + digitB + carry;
@@ -62,3 +62,4 @@ function addStrings(a: string, b: string): string {
 
   return result;
 }
+

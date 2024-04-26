@@ -2,6 +2,30 @@
 
 const utils = {};
 
+// Helper function to add two strings representing integers
+utils.addStrings = (a, b) => {
+  let result = '';
+  let carry = 0;
+  let sum;
+
+  let maxLength = Math.max(a.length, b.length);
+
+  for (let i = 0; i < maxLength || carry !== 0; i++) {
+      let digitA = i < a.length
+                ? a.charCodeAt(a.length - 1 - i) - '0'.charCodeAt(0)
+                : 0;
+      let digitB = i < b.length
+                ? b.charCodeAt(b.length - 1 - i) - '0'.charCodeAt(0)
+                : 0;
+
+      sum = digitA + digitB + carry;
+      carry = sum >= 10 ? 1 : 0;
+      result = String.fromCharCode((sum % 10) + '0'.charCodeAt(0)) + result;
+  }
+
+  return result;
+};
+
 utils.formatPercent = (n) => `${ (n * 100).toFixed(2) }%`;
 
 utils.printProgress = (count, max) => {
@@ -34,5 +58,5 @@ utils.groupBy = (objArraay, key) => {
   }, {});
 };
 
-// if (typeof module !== 'undefined')
+if (typeof module !== 'undefined')
   module.exports = utils;
