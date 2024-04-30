@@ -45,11 +45,10 @@ const asciiSpinner = (percentMod) => {
 utils.printProgress = (count, max) => {
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
-  const percent = utils.formatPercent(
-    count / max
-  );
+  const fraction = count / max;
+  const percent = utils.formatPercent(fraction);
   process.stdout.write(
-    `${asciiSpinner(percent % 3)} ${count} / ${max} (${percent})`
+    `${asciiSpinner(Math.floor(fraction * 100) % 3)} ${count} / ${max} (${percent})`
   )
 };
 
