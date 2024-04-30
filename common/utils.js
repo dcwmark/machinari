@@ -33,6 +33,15 @@ utils.addStrings = (a, b) => {
 
 utils.formatPercent = (n) => `${ (n * 100).toFixed(2) }%`;
 
+const spinnerSpans = {
+  0: '|',
+  1: '/',
+  2: '\\',
+};
+const asciiSpinner = (percentMod) => {
+  return spinnerSpans[percentMod];
+};
+
 utils.printProgress = (count, max) => {
   process.stdout.clearLine();
   process.stdout.cursorTo(0);
@@ -40,7 +49,7 @@ utils.printProgress = (count, max) => {
     count / max
   );
   process.stdout.write(
-    `${count} / ${max} (${percent})`
+    `${asciiSpinner(percent % 3)} ${count} / ${max} (${percent})`
   )
 };
 

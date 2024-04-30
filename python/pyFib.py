@@ -4,11 +4,13 @@ import os
 import sys
 import subprocess
 
+sys.set_int_max_str_digits(50000)
+
 # Need to set this recursion limit
 # because Python has a default recursion limit
 # (usually 1000) to prevent infinite recursion
 # from causing stack overflow and crashing the program.
-sys.setrecursionlimit(1000000)
+# sys.setrecursionlimit(1000000)
 
 # Load environment variables from .env file
 from dotenv import load_dotenv # type: ignore
