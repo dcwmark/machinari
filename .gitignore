@@ -131,3 +131,5 @@ dist
 
 # Easily re-creatable data files
 *.dat
+
+/emsdk/
