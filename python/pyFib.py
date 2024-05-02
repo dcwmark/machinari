@@ -4,8 +4,6 @@ import os
 import sys
 import subprocess
 
-sys.set_int_max_str_digits(50000)
-
 # Need to set this recursion limit
 # because Python has a default recursion limit
 # (usually 1000) to prevent infinite recursion
