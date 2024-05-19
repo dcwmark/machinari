@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "web:fibo": "npx serve web/fibo"
+    "web:fibo": "npx serve ./web/fibo"
   },
   "dependencies": {
     "nodemon": "^3.1.0"
