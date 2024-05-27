@@ -1,16 +1,12 @@
 <!DOCTYPE html>
+<html lang="en">
 <html>
   <head>
-    <meta name="viewport"
-          content="width=device-width,
-          maximum-scale=0.9,
-          user-scalable=0" />
-    <meta http-equiv="Content-Type" content="text/html;charset=UTF-8" />
     <title>Fibo</title>
     <link rel="stylesheet" href="styles.css">
     <script type="module">
       import { asFib } from "../../WebAssembly/AssemblyScript/build/debug.js";
-      console.log(asFib(9));
+      console.log(asFib(9, 1, 0));
     </script>
   </head>
   <body>
