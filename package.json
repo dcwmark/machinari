@@ -1,5 +1,0 @@
-{
-  "scripts": {
-    "web:fibo": "npx serve web/fibo"
-  }
-}
