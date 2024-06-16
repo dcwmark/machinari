@@ -10,6 +10,10 @@ import subprocess
 # from causing stack overflow and crashing the program.
 # sys.setrecursionlimit(1000000)
 
+# Need to set this max stting digits to be greater than
+# the default 4300.
+sys.set_int_max_str_digits(99999) 
+
 # Load environment variables from .env file
 from dotenv import load_dotenv # type: ignore
 load_dotenv()

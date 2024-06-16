@@ -25,6 +25,8 @@
  * @returns - Fibonacci sequence bases on a, b.
  */
 
+const UNSIGNED_INT_MAX = '18446744073709551615';
+
 export function asFib(n: i32, a: string, b: string): string[] {
   if (n <= 0) return ['0'];
 
@@ -33,7 +35,18 @@ export function asFib(n: i32, a: string, b: string): string[] {
   aFib[1] = b;
   
   while(aFib.length < n) {
-    aFib.push(addStrings(aFib[aFib.length - 1], aFib[aFib.length - 2]));
+    if (
+      aFib[aFib.length - 1] < UNSIGNED_INT_MAX
+    ||
+      aFib[aFib.length - 2] < UNSIGNED_INT_MAX
+    ) {
+      aFib.push((
+          parseInt(aFib[aFib.length - 1])
+        + parseInt(aFib[aFib.length - 2]))
+        .toString());
+    } else {
+      aFib.push(addStrings(aFib[aFib.length - 1], aFib[aFib.length - 2]));
+    }
   }
 
   return aFib;
