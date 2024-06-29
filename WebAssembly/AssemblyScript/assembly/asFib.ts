@@ -25,8 +25,6 @@
  * @returns - Fibonacci sequence bases on a, b.
  */
 
-const UNSIGNED_INT_MAX = '18446744073709551615';
-
 export function asFib(n: i32, a: string, b: string): string[] {
   if (n <= 0) return ['0'];
 
@@ -37,22 +35,17 @@ export function asFib(n: i32, a: string, b: string): string[] {
   while(aFib.length < n) {
     console.log(`aFib[${aFib.length - 2}]:: ${aFib[aFib.length - 2]}`);
     console.log(`aFib[${aFib.length - 1}]:: ${aFib[aFib.length - 1]}`);
-    if (
-      aFib[aFib.length - 1] < UNSIGNED_INT_MAX
-    ||
-      aFib[aFib.length - 2] < UNSIGNED_INT_MAX
-    ) {
-      console.log(`parseInt[${aFib.length - 2}]:: ${aFib.length - 2}`);
-      console.log(`parseInt[${aFib.length - 1}]:: ${aFib.length - 1}`);
-      const sum = parseInt(aFib[aFib.length - 2])
-                + parseInt(aFib[aFib.length - 1]);
-      console.log(`sum charCodeAt:: ${sum.toString().charCodeAt(0)}`);
-      console.log(`sum fromCharCode:: ${String.fromCharCode(sum.toString().charCodeAt(0))}`);
-      console.log(`sum string:: ${sum.toString().split('.')[0]}`);
+    const aa: i64 = i64(parseInt(aFib[aFib.length - 2]));
+    console.debug(`${aa} < ${Number.MAX_SAFE_INTEGER} <> ${f64(aa) < f64(Number.MAX_SAFE_INTEGER)}`);
+    const bb: i64 = i64(parseInt(aFib[aFib.length - 1]));
+    console.debug(`${bb} < ${Number.MAX_SAFE_INTEGER} <> ${f64(bb) < f64(Number.MAX_SAFE_INTEGER)}`);
+    if ( f64(aa) < f64(Number.MAX_SAFE_INTEGER)
+      && f64(bb) < f64(Number.MAX_SAFE_INTEGER) ) {
+      const sum = aa + bb;
       aFib.push((sum.toString().split('.')[0]));
-      console.debug(`aFib:: ${aFib}`);
+      console.debug(`########## aFib:: ${aFib}`);
     } else {
-      console.log(`addStrings ...`);
+      console.log(`********** addStrings ...`);
       aFib.push(addStrings(aFib[aFib.length - 1], aFib[aFib.length - 2]));
     }
   }
