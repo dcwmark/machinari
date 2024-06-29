@@ -12,6 +12,16 @@ async function instantiate(module, imports = {}) {
           throw Error(`${message} in ${fileName}:${lineNumber}:${columnNumber}`);
         })();
       },
+      "console.log"(text) {
+        // ~lib/bindings/dom/console.log(~lib/string/String) => void
+        text = __liftString(text >>> 0);
+        console.log(text);
+      },
+      "console.debug"(text) {
+        // ~lib/bindings/dom/console.debug(~lib/string/String) => void
+        text = __liftString(text >>> 0);
+        console.debug(text);
+      },
     }),
   };
   const { exports } = await WebAssembly.instantiate(module, adaptedImports);

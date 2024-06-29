@@ -35,16 +35,23 @@ export function asFib(n: i32, a: string, b: string): string[] {
   aFib[1] = b;
   
   while(aFib.length < n) {
+    console.log(`aFib[${aFib.length - 2}]:: ${aFib[aFib.length - 2]}`);
+    console.log(`aFib[${aFib.length - 1}]:: ${aFib[aFib.length - 1]}`);
     if (
       aFib[aFib.length - 1] < UNSIGNED_INT_MAX
     ||
       aFib[aFib.length - 2] < UNSIGNED_INT_MAX
     ) {
-      aFib.push((
-          parseInt(aFib[aFib.length - 1])
-        + parseInt(aFib[aFib.length - 2]))
-        .toString());
+      console.log(`parseInt[${aFib.length - 2}]:: ${aFib.length - 2}`);
+      console.log(`parseInt[${aFib.length - 1}]:: ${aFib.length - 1}`);
+      const sum = parseInt(aFib[aFib.length - 2])
+                + parseInt(aFib[aFib.length - 1]);
+      console.log(`sum charCodeAt:: ${sum.toString().charCodeAt(0)}`);
+      console.log(`sum fromCharCode:: ${String.fromCharCode(sum.toString().charCodeAt(0))}`);
+      aFib.push(String.fromCharCode(sum.toString().charCodeAt(0)));
+      console.debug(`aFib:: ${aFib}`);
     } else {
+      console.log(`addStrings ...`);
       aFib.push(addStrings(aFib[aFib.length - 1], aFib[aFib.length - 2]));
     }
   }
