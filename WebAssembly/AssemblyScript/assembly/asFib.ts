@@ -48,7 +48,8 @@ export function asFib(n: i32, a: string, b: string): string[] {
                 + parseInt(aFib[aFib.length - 1]);
       console.log(`sum charCodeAt:: ${sum.toString().charCodeAt(0)}`);
       console.log(`sum fromCharCode:: ${String.fromCharCode(sum.toString().charCodeAt(0))}`);
-      aFib.push(String.fromCharCode(sum.toString().charCodeAt(0)));
+      console.log(`sum string:: ${sum.toString().split('.')[0]}`);
+      aFib.push((sum.toString().split('.')[0]));
       console.debug(`aFib:: ${aFib}`);
     } else {
       console.log(`addStrings ...`);
