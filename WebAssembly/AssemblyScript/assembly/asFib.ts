@@ -33,19 +33,19 @@ export function asFib(n: i32, a: string, b: string): string[] {
   aFib[1] = b;
   
   while(aFib.length < n) {
-    console.log(`aFib[${aFib.length - 2}]:: ${aFib[aFib.length - 2]}`);
-    console.log(`aFib[${aFib.length - 1}]:: ${aFib[aFib.length - 1]}`);
+    // console.log(`aFib[${aFib.length - 2}]:: ${aFib[aFib.length - 2]}`);
+    // console.log(`aFib[${aFib.length - 1}]:: ${aFib[aFib.length - 1]}`);
     const aa: i64 = i64(parseInt(aFib[aFib.length - 2]));
-    console.debug(`${aa} < ${Number.MAX_SAFE_INTEGER} <> ${f64(aa) < f64(Number.MAX_SAFE_INTEGER)}`);
+    // console.debug(`${aa} < ${Number.MAX_SAFE_INTEGER} <> ${f64(aa) < f64(Number.MAX_SAFE_INTEGER)}`);
     const bb: i64 = i64(parseInt(aFib[aFib.length - 1]));
-    console.debug(`${bb} < ${Number.MAX_SAFE_INTEGER} <> ${f64(bb) < f64(Number.MAX_SAFE_INTEGER)}`);
+    // console.debug(`${bb} < ${Number.MAX_SAFE_INTEGER} <> ${f64(bb) < f64(Number.MAX_SAFE_INTEGER)}`);
     if ( f64(aa) < f64(Number.MAX_SAFE_INTEGER)
       && f64(bb) < f64(Number.MAX_SAFE_INTEGER) ) {
       const sum = aa + bb;
       aFib.push((sum.toString().split('.')[0]));
-      console.debug(`########## aFib:: ${aFib}`);
+      // console.debug(`########## aFib:: ${aFib}`);
     } else {
-      console.log(`********** addStrings ...`);
+      // console.log(`********** addStrings ...`);
       aFib.push(addStrings(aFib[aFib.length - 1], aFib[aFib.length - 2]));
     }
   }
