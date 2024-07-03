@@ -1,6 +1,11 @@
 async function instantiate(module, imports = {}) {
   const adaptedImports = {
     env: Object.assign(Object.create(globalThis), imports.env || {}, {
+      "console.log"(text) {
+        // ~lib/bindings/dom/console.log(~lib/string/String) => void
+        text = __liftString(text >>> 0);
+        console.log(text);
+      },
       abort(message, fileName, lineNumber, columnNumber) {
         // ~lib/builtins/abort(~lib/string/String | null?, ~lib/string/String | null?, u32?, u32?) => void
         message = __liftString(message >>> 0);
@@ -25,6 +30,13 @@ async function instantiate(module, imports = {}) {
         return __liftArray(pointer => __liftString(__getU32(pointer)), 2, exports.asFib(n, a, b) >>> 0);
       } finally {
         __release(a);
+      }
+    },
+    largeNumberAddition: {
+      // assembly/helper/largeNumberAddition: (~lib/string/String, ~lib/string/String) => ~lib/string/String
+      valueOf() { return this.value; },
+      get value() {
+        return __liftInternref(exports.largeNumberAddition.value >>> 0);
       }
     },
   }, exports);
@@ -56,6 +68,14 @@ async function instantiate(module, imports = {}) {
       values = new Array(length);
     for (let i = 0; i < length; ++i) values[i] = liftElement(dataStart + (i << align >>> 0));
     return values;
+  }
+  class Internref extends Number {}
+  const registry = new FinalizationRegistry(__release);
+  function __liftInternref(pointer) {
+    if (!pointer) return null;
+    const sentinel = new Internref(__retain(pointer));
+    registry.register(sentinel, pointer);
+    return sentinel;
   }
   const refcounts = new Map();
   function __retain(pointer) {
@@ -91,6 +111,7 @@ async function instantiate(module, imports = {}) {
 export const {
   memory,
   asFib,
+  largeNumberAddition,
   add,
 } = await (async url => instantiate(
   await (async () => {
