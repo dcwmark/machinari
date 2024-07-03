@@ -1,4 +1,4 @@
-// common/utils.js
+// common/utils.mjs
 
 const utils = {};
 

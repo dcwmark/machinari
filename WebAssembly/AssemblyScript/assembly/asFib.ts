@@ -2,6 +2,8 @@
 
 'use strict';
 
+import { laargeNumberAddition } from "./helper";
+
 /**
  * Have to use string mathematic because AssemblyScript,
  * like many low-level programming languages, the maximum value
