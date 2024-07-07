@@ -35,12 +35,13 @@ export function asFib(n: i32, a: string, b: string): string[] {
   aFib[1] = b;
   
   while(aFib.length < n) {
-    console.log(`aFib[${aFib.length - 2}]:: ${aFib[aFib.length - 2]}`);
-    console.log(`aFib[${aFib.length - 1}]:: ${aFib[aFib.length - 1]}`);
-    const aa: i64 = i64(parseInt(aFib[aFib.length - 2]));
-    // console.debug(`${aa} < ${Number.MAX_SAFE_INTEGER} <> ${f64(aa) < f64(Number.MAX_SAFE_INTEGER)}`);
-    const bb: i64 = i64(parseInt(aFib[aFib.length - 1]));
-    // console.debug(`${bb} < ${Number.MAX_SAFE_INTEGER} <> ${f64(bb) < f64(Number.MAX_SAFE_INTEGER)}`);
+    const aa = aFib[aFib.length - 2];
+    const bb = aFib[aFib.length - 1];
+    console.log(`aFib[${aFib.length - 2}]:: ${aa}`);
+    console.log(`aFib[${aFib.length - 1}]:: ${bb}`);
+
+    
+
     if ( f64(aa) < f64(Number.MAX_SAFE_INTEGER)
       && f64(bb) < f64(Number.MAX_SAFE_INTEGER) ) {
       const sum = aa + bb;
