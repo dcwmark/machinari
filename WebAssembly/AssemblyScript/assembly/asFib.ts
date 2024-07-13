@@ -37,8 +37,8 @@ export function asFib(n: i32, a: string, b: string): string[] {
   while(aFib.length < n) {
     const aa = aFib[aFib.length - 2];
     const bb = aFib[aFib.length - 1];
-    console.log(`aFib[${aFib.length - 2}]:: ${aa}`);
-    console.log(`aFib[${aFib.length - 1}]:: ${bb}`);
+    console.log(`aFib[${aFib.length - 2}]:: ${aa} aa.length::${aa.length}`);
+    console.log(`aFib[${aFib.length - 1}]:: ${bb} bb.length::${bb.length}`);
 
     if (aa.length < 9
      && bb.length < 9) {
