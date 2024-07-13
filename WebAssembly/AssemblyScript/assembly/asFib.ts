@@ -40,17 +40,16 @@ export function asFib(n: i32, a: string, b: string): string[] {
     console.log(`aFib[${aFib.length - 2}]:: ${aa}`);
     console.log(`aFib[${aFib.length - 1}]:: ${bb}`);
 
-    
-
-    if ( f64(aa) < f64(Number.MAX_SAFE_INTEGER)
-      && f64(bb) < f64(Number.MAX_SAFE_INTEGER) ) {
-      const sum = aa + bb;
+    if (aa.length < 9
+     && bb.length < 9) {
+      console.log(`********** small enough`);
+      const sum = parseInt(aa) + parseInt(bb);
       aFib.push((sum.toString().split('.')[0]));
-      // console.debug(`########## aFib:: ${aFib}`);
     } else {
-      // console.log(`********** addStrings ...`);
-      aFib.push(largeNumberAddition(aFib[aFib.length - 1], aFib[aFib.length - 2]));
+      console.log(`********** largeNumberAddition`);
+      aFib.push(largeNumberAddition(aa, bb));
     }
+    console.log(`########## aFib:: ${aFib}`);
   }
 
   return aFib;

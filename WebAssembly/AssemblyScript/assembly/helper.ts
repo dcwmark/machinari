@@ -4,11 +4,21 @@
 
 const NINE_DIGIT_CHUNK = 1_000_000_000;
 
-const largeNumberToArray = (numb: string): i32[] => {
+const largeNumberToArray = (numStr: string): i32[] => {
   console.log(`### largeNumberToArray ...`);
+  const CHUNK_SIZE = 9;
   const result: i32[] = [];
   
-  console.log(`largeNumberToArray result:: ${result}`);
+  for (let i = numStr.length; i > 0; i -= CHUNK_SIZE) {
+    let start = i - CHUNK_SIZE;
+    if (start < 0) start = 0;
+    let chunkStr = numStr.substring(start, i);
+    let chunkValue = I32.parseInt(chunkStr);
+    console.log(`largeNumberToArray chunkValue:: ${chunkValue}`);
+    result.unshift(chunkValue);
+  }
+
+  console.log(`largeNumberToArray result:: ${Object.prototype.toString.call(result)}`);
   return result;
 };
 
@@ -16,6 +26,9 @@ export const largeNumberAddition = (a: string, b: string): string => {
   console.log(`### arrayAddition ...`);
   const aa = largeNumberToArray(a);
   const bb = largeNumberToArray(b);
+  console.log(`largeNumberAddition aa:: ${aa}`);
+  console.log(`largeNumberAddition bb:: ${bb}`);
+
 
   // const arraySum = arrayAddition(aa, bb);
   return '1';
