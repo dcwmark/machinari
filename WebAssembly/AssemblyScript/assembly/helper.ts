@@ -44,7 +44,7 @@ export const largeNumberAddition = (a: string, b: string): string => {
   const aa = largeNumberToI32Array(a);
   const bb = largeNumberToI32Array(b);
   const arraySum: i32[] = arrayAddition(aa, bb);
-
+  console.log(`++++++++++ ${aa} + ${bb} = ${arraySum}`);
 
   return '1';
 };
