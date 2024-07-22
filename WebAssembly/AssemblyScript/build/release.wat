@@ -2,9 +2,9 @@
  (type $0 (func (param i32 i32) (result i32)))
  (type $1 (func (param i32) (result i32)))
  (type $2 (func (param i32)))
- (type $3 (func (param i32 i32 i32) (result i32)))
- (type $4 (func (param i32 i32)))
- (type $5 (func))
+ (type $3 (func (param i32 i32)))
+ (type $4 (func))
+ (type $5 (func (param i32 i32 i32) (result i32)))
  (type $6 (func (param i32 i32 i32)))
  (type $7 (func (param i32) (result f64)))
  (type $8 (func (param i32 i32 i32 i32)))
@@ -12,9 +12,7 @@
  (type $10 (func (result i32)))
  (type $11 (func (param i64 i64 i32 i64 i32) (result i32)))
  (type $12 (func (param f64) (result i32)))
- (type $13 (func (param i64) (result i32)))
  (import "env" "abort" (func $~lib/builtins/abort (param i32 i32 i32 i32)))
- (import "env" "console.log" (func $~lib/bindings/dom/console.log (param i32)))
  (global $~lib/rt/itcms/total (mut i32) (i32.const 0))
  (global $~lib/rt/itcms/threshold (mut i32) (i32.const 0))
  (global $~lib/rt/itcms/state (mut i32) (i32.const 0))
@@ -25,155 +23,80 @@
  (global $~lib/rt/itcms/white (mut i32) (i32.const 0))
  (global $~lib/rt/itcms/fromSpace (mut i32) (i32.const 0))
  (global $~lib/rt/tlsf/ROOT (mut i32) (i32.const 0))
- (global $assembly/helper/largeNumberAddition i32 (i32.const 5280))
+ (global $assembly/helper/largeNumberAddition i32 (i32.const 3536))
  (global $~lib/util/number/_frc_plus (mut i64) (i64.const 0))
  (global $~lib/util/number/_frc_minus (mut i64) (i64.const 0))
  (global $~lib/util/number/_exp (mut i32) (i32.const 0))
  (global $~lib/util/number/_K (mut i32) (i32.const 0))
  (global $~lib/util/number/_frc_pow (mut i64) (i64.const 0))
  (global $~lib/util/number/_exp_pow (mut i32) (i32.const 0))
- (global $~lib/rt/__rtti_base i32 (i32.const 7232))
- (global $~lib/memory/__stack_pointer (mut i32) (i32.const 40048))
+ (global $~lib/rt/__rtti_base i32 (i32.const 5040))
+ (global $~lib/memory/__stack_pointer (mut i32) (i32.const 37852))
  (memory $0 1)
  (data $0 (i32.const 1036) ",")
  (data $0.1 (i32.const 1048) "\02\00\00\00\14\00\00\00u\00s\00e\00 \00s\00t\00r\00i\00c\00t")
- (data $1 (i32.const 1084) "L")
- (data $1.1 (i32.const 1096) "\02\00\00\00<\00\00\00#\00#\00#\00 \00l\00a\00r\00g\00e\00N\00u\00m\00b\00e\00r\00T\00o\00I\003\002\00A\00r\00r\00a\00y\00 \00.\00.\00.\00 ")
- (data $2 (i32.const 1164) ",")
- (data $2.1 (i32.const 1176) "\02\00\00\00\12\00\00\00 \00l\00e\00n\00g\00t\00h\00:\00:")
- (data $3 (i32.const 1212) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\10\00\00\00P\04\00\00\00\00\00\00\a0\04")
- (data $4 (i32.const 1260) "|")
- (data $4.1 (i32.const 1272) "\02\00\00\00d\00\00\00t\00o\00S\00t\00r\00i\00n\00g\00(\00)\00 \00r\00a\00d\00i\00x\00 \00a\00r\00g\00u\00m\00e\00n\00t\00 \00m\00u\00s\00t\00 \00b\00e\00 \00b\00e\00t\00w\00e\00e\00n\00 \002\00 \00a\00n\00d\00 \003\006")
- (data $5 (i32.const 1388) "<")
- (data $5.1 (i32.const 1400) "\02\00\00\00&\00\00\00~\00l\00i\00b\00/\00u\00t\00i\00l\00/\00n\00u\00m\00b\00e\00r\00.\00t\00s")
- (data $6 (i32.const 1452) "\1c")
- (data $6.1 (i32.const 1464) "\02\00\00\00\02\00\00\000")
- (data $7 (i32.const 1484) "<")
- (data $7.1 (i32.const 1496) "\02\00\00\00(\00\00\00A\00l\00l\00o\00c\00a\00t\00i\00o\00n\00 \00t\00o\00o\00 \00l\00a\00r\00g\00e")
- (data $8 (i32.const 1548) "<")
- (data $8.1 (i32.const 1560) "\02\00\00\00 \00\00\00~\00l\00i\00b\00/\00r\00t\00/\00i\00t\00c\00m\00s\00.\00t\00s")
- (data $11 (i32.const 1676) "<")
- (data $11.1 (i32.const 1688) "\02\00\00\00$\00\00\00I\00n\00d\00e\00x\00 \00o\00u\00t\00 \00o\00f\00 \00r\00a\00n\00g\00e")
- (data $12 (i32.const 1740) ",")
- (data $12.1 (i32.const 1752) "\02\00\00\00\14\00\00\00~\00l\00i\00b\00/\00r\00t\00.\00t\00s")
- (data $14 (i32.const 1820) "<")
- (data $14.1 (i32.const 1832) "\02\00\00\00\1e\00\00\00~\00l\00i\00b\00/\00r\00t\00/\00t\00l\00s\00f\00.\00t\00s")
- (data $15 (i32.const 1884) "0\000\000\001\000\002\000\003\000\004\000\005\000\006\000\007\000\008\000\009\001\000\001\001\001\002\001\003\001\004\001\005\001\006\001\007\001\008\001\009\002\000\002\001\002\002\002\003\002\004\002\005\002\006\002\007\002\008\002\009\003\000\003\001\003\002\003\003\003\004\003\005\003\006\003\007\003\008\003\009\004\000\004\001\004\002\004\003\004\004\004\005\004\006\004\007\004\008\004\009\005\000\005\001\005\002\005\003\005\004\005\005\005\006\005\007\005\008\005\009\006\000\006\001\006\002\006\003\006\004\006\005\006\006\006\007\006\008\006\009\007\000\007\001\007\002\007\003\007\004\007\005\007\006\007\007\007\008\007\009\008\000\008\001\008\002\008\003\008\004\008\005\008\006\008\007\008\008\008\009\009\000\009\001\009\002\009\003\009\004\009\005\009\006\009\007\009\008\009\009")
- (data $16 (i32.const 2284) "\1c\04")
- (data $16.1 (i32.const 2296) "\02\00\00\00\00\04\00\000\000\000\001\000\002\000\003\000\004\000\005\000\006\000\007\000\008\000\009\000\00a\000\00b\000\00c\000\00d\000\00e\000\00f\001\000\001\001\001\002\001\003\001\004\001\005\001\006\001\007\001\008\001\009\001\00a\001\00b\001\00c\001\00d\001\00e\001\00f\002\000\002\001\002\002\002\003\002\004\002\005\002\006\002\007\002\008\002\009\002\00a\002\00b\002\00c\002\00d\002\00e\002\00f\003\000\003\001\003\002\003\003\003\004\003\005\003\006\003\007\003\008\003\009\003\00a\003\00b\003\00c\003\00d\003\00e\003\00f\004\000\004\001\004\002\004\003\004\004\004\005\004\006\004\007\004\008\004\009\004\00a\004\00b\004\00c\004\00d\004\00e\004\00f\005\000\005\001\005\002\005\003\005\004\005\005\005\006\005\007\005\008\005\009\005\00a\005\00b\005\00c\005\00d\005\00e\005\00f\006\000\006\001\006\002\006\003\006\004\006\005\006\006\006\007\006\008\006\009\006\00a\006\00b\006\00c\006\00d\006\00e\006\00f\007\000\007\001\007\002\007\003\007\004\007\005\007\006\007\007\007\008\007\009\007\00a\007\00b\007\00c\007\00d\007\00e\007\00f\008\000\008\001\008\002\008\003\008\004\008\005\008\006\008\007\008\008\008\009\008\00a\008\00b\008\00c\008\00d\008\00e\008\00f\009\000\009\001\009\002\009\003\009\004\009\005\009\006\009\007\009\008\009\009\009\00a\009\00b\009\00c\009\00d\009\00e\009\00f\00a\000\00a\001\00a\002\00a\003\00a\004\00a\005\00a\006\00a\007\00a\008\00a\009\00a\00a\00a\00b\00a\00c\00a\00d\00a\00e\00a\00f\00b\000\00b\001\00b\002\00b\003\00b\004\00b\005\00b\006\00b\007\00b\008\00b\009\00b\00a\00b\00b\00b\00c\00b\00d\00b\00e\00b\00f\00c\000\00c\001\00c\002\00c\003\00c\004\00c\005\00c\006\00c\007\00c\008\00c\009\00c\00a\00c\00b\00c\00c\00c\00d\00c\00e\00c\00f\00d\000\00d\001\00d\002\00d\003\00d\004\00d\005\00d\006\00d\007\00d\008\00d\009\00d\00a\00d\00b\00d\00c\00d\00d\00d\00e\00d\00f\00e\000\00e\001\00e\002\00e\003\00e\004\00e\005\00e\006\00e\007\00e\008\00e\009\00e\00a\00e\00b\00e\00c\00e\00d\00e\00e\00e\00f\00f\000\00f\001\00f\002\00f\003\00f\004\00f\005\00f\006\00f\007\00f\008\00f\009\00f\00a\00f\00b\00f\00c\00f\00d\00f\00e\00f\00f")
- (data $17 (i32.const 3340) "\\")
- (data $17.1 (i32.const 3352) "\02\00\00\00H\00\00\000\001\002\003\004\005\006\007\008\009\00a\00b\00c\00d\00e\00f\00g\00h\00i\00j\00k\00l\00m\00n\00o\00p\00q\00r\00s\00t\00u\00v\00w\00x\00y\00z")
- (data $18 (i32.const 3436) "\1c")
- (data $18.1 (i32.const 3448) "\02")
- (data $19 (i32.const 3468) "\1c")
- (data $19.1 (i32.const 3480) "\01")
- (data $20 (i32.const 3500) ",")
- (data $20.1 (i32.const 3512) "\02\00\00\00\1c\00\00\00I\00n\00v\00a\00l\00i\00d\00 \00l\00e\00n\00g\00t\00h")
- (data $21 (i32.const 3548) ",")
- (data $21.1 (i32.const 3560) "\02\00\00\00\1a\00\00\00~\00l\00i\00b\00/\00a\00r\00r\00a\00y\00.\00t\00s")
- (data $22 (i32.const 3596) "\1c")
- (data $22.1 (i32.const 3608) "\02\00\00\00\02\00\00\00,")
- (data $23 (i32.const 3628) "<")
- (data $23.1 (i32.const 3640) "\02\00\00\00&\00\00\00=\00=\00=\00=\00=\00=\00=\00=\00=\00=\00 \00r\00e\00s\00u\00l\00t\00:\00:")
- (data $24 (i32.const 3692) "\1c")
- (data $24.1 (i32.const 3704) "\06\00\00\00\08\00\00\00\01")
- (data $25 (i32.const 3724) "<")
- (data $25.1 (i32.const 3736) "\02\00\00\00*\00\00\00#\00#\00#\00 \00a\00r\00r\00a\00y\00A\00d\00d\00i\00t\00i\00o\00n\00 \00.\00.\00.")
- (data $26 (i32.const 3788) ",")
- (data $26.1 (i32.const 3800) "\02\00\00\00\18\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\001\00:\00:")
- (data $27 (i32.const 3836) ",")
- (data $27.1 (i32.const 3848) "\02\00\00\00\18\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\002\00:\00:")
- (data $28 (i32.const 3884) ",")
- (data $28.1 (i32.const 3896) "\02\00\00\00\1c\00\00\00*\00*\00*\00*\00*\00 \00l\00e\00n\00g\00t\00h\00:\00:")
- (data $29 (i32.const 3932) ",")
- (data $29.1 (i32.const 3944) "\02\00\00\00\12\00\00\00*\00*\00*\00*\00*\00 \00i\00:\00:")
- (data $30 (i32.const 3980) "<")
- (data $30.1 (i32.const 3992) "\02\00\00\00&\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\001\00 \00l\00e\00n\00g\00t\00h\00:\00:")
- (data $31 (i32.const 4044) ",")
- (data $31.1 (i32.const 4056) "\02\00\00\00\18\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\00A\00:\00:")
- (data $32 (i32.const 4092) "<")
- (data $32.1 (i32.const 4104) "\02\00\00\00&\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\002\00 \00l\00e\00n\00g\00t\00h\00:\00:")
- (data $33 (i32.const 4156) ",")
- (data $33.1 (i32.const 4168) "\02\00\00\00\18\00\00\00*\00*\00*\00*\00*\00 \00n\00u\00m\00B\00:\00:")
- (data $34 (i32.const 4204) ",")
- (data $34.1 (i32.const 4216) "\02\00\00\00\16\00\00\00*\00*\00*\00*\00*\00 \00s\00u\00m\00:\00:")
- (data $35 (i32.const 4252) ",")
- (data $35.1 (i32.const 4264) "\02\00\00\00\1a\00\00\00*\00*\00*\00*\00*\00 \00r\00e\00s\00u\00l\00t\00[")
- (data $36 (i32.const 4300) "\1c")
- (data $36.1 (i32.const 4312) "\02\00\00\00\06\00\00\00]\00:\00:")
- (data $37 (i32.const 4332) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\10\00\00\00\b0\10\00\00\00\00\00\00\e0\10")
- (data $38 (i32.const 4380) ",")
- (data $38.1 (i32.const 4392) "\02\00\00\00\1a\00\00\00^\00^\00^\00^\00^\00 \00c\00a\00r\00r\00y\00:\00:")
- (data $39 (i32.const 4428) "\1c")
- (data $39.1 (i32.const 4440) "\07\00\00\00\08\00\00\00\02")
- (data $40 (i32.const 4460) "\\")
- (data $40.1 (i32.const 4472) "\02\00\00\00F\00\00\00#\00#\00#\00 \00i\003\002\00A\00r\00r\00a\00y\00T\00o\00S\00t\00r\00i\00n\00g\00 \00.\00.\00.\00 \00i\003\002\00A\00r\00r\00a\00y\00:\00:")
- (data $41 (i32.const 4556) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\10\00\00\00\80\11\00\00\00\00\00\00\a0\04")
- (data $42 (i32.const 4604) ",")
- (data $42.1 (i32.const 4616) "\02\00\00\00\14\00\00\00*\00*\00*\00*\00*\00 \00i\00:\00:\00 ")
- (data $43 (i32.const 4652) "<")
- (data $43.1 (i32.const 4664) "\02\00\00\00(\00\00\00*\00*\00*\00*\00*\00*\00*\00*\00*\00*\00 \00i\003\002\00A\00r\00r\00a\00y\00[")
- (data $44 (i32.const 4716) "\1c")
- (data $44.1 (i32.const 4728) "\02\00\00\00\08\00\00\00]\00:\00:\00 ")
- (data $45 (i32.const 4748) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\10\00\00\00@\12\00\00\00\00\00\00\80\12")
- (data $46 (i32.const 4796) "<")
- (data $46.1 (i32.const 4808) "\02\00\00\00(\00\00\00*\00*\00*\00*\00*\00*\00*\00*\00*\00*\00 \00r\00e\00s\00u\00l\00t\00:\00:\00 ")
- (data $47 (i32.const 4860) "\1c")
- (data $47.1 (i32.const 4872) "\08\00\00\00\08\00\00\00\03")
- (data $48 (i32.const 4892) "L")
- (data $48.1 (i32.const 4904) "\02\00\00\006\00\00\00#\00#\00#\00 \00l\00a\00r\00g\00e\00N\00u\00m\00b\00e\00r\00A\00d\00d\00i\00t\00i\00o\00n\00 \00.\00.\00.")
- (data $49 (i32.const 4972) "<")
- (data $49.1 (i32.const 4984) "\02\00\00\00 \00\00\00+\00+\00+\00+\00+\00+\00+\00+\00+\00+\00 \00a\00a\00:\00:\00 ")
- (data $50 (i32.const 5036) "<")
- (data $50.1 (i32.const 5048) "\02\00\00\00 \00\00\00+\00+\00+\00+\00+\00+\00+\00+\00+\00+\00 \00b\00b\00:\00:\00 ")
- (data $51 (i32.const 5100) ",")
- (data $51.1 (i32.const 5112) "\02\00\00\00\16\00\00\00+\00+\00+\00+\00+\00+\00+\00+\00+\00+\00 ")
- (data $52 (i32.const 5148) "\1c")
- (data $52.1 (i32.const 5160) "\02\00\00\00\06\00\00\00 \00+\00 ")
- (data $53 (i32.const 5180) "\1c")
- (data $53.1 (i32.const 5192) "\02\00\00\00\06\00\00\00 \00=\00 ")
- (data $54 (i32.const 5212) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\18\00\00\00\00\14\00\00\00\00\00\000\14\00\00\00\00\00\00P\14")
- (data $55 (i32.const 5260) "\1c")
- (data $55.1 (i32.const 5272) "\t\00\00\00\08\00\00\00\04")
- (data $56 (i32.const 5292) "\1c")
- (data $56.1 (i32.const 5304) "\01\00\00\00\04\00\00\00\c0\05")
- (data $57 (i32.const 5324) "\1c")
- (data $57.1 (i32.const 5336) "\01")
- (data $58 (i32.const 5356) "|")
- (data $58.1 (i32.const 5368) "\02\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
- (data $59 (i32.const 5484) "\1c")
- (data $59.1 (i32.const 5496) "\02\00\00\00\n\00\00\00a\00F\00i\00b\00[")
- (data $60 (i32.const 5516) ",")
- (data $60.1 (i32.const 5528) "\02\00\00\00\18\00\00\00 \00a\00a\00.\00l\00e\00n\00g\00t\00h\00:\00:")
- (data $61 (i32.const 5564) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\18\00\00\00\80\15\00\00\00\00\00\00\80\12\00\00\00\00\00\00\a0\15")
- (data $62 (i32.const 5612) ",")
- (data $62.1 (i32.const 5624) "\02\00\00\00\18\00\00\00 \00b\00b\00.\00l\00e\00n\00g\00t\00h\00:\00:")
- (data $63 (i32.const 5660) ",\00\00\00\03\00\00\00\00\00\00\00\05\00\00\00\18\00\00\00\80\15\00\00\00\00\00\00\80\12\00\00\00\00\00\00\00\16")
- (data $64 (i32.const 5708) "L")
- (data $64.1 (i32.const 5720) "\02\00\00\00.\00\00\00*\00*\00*\00*\00*\00*\00*\00*\00*\00*\00 \00s\00m\00a\00l\00l\00 \00e\00n\00o\00u\00g\00h")
- (data $65 (i32.const 5788) "\1c")
- (data $65.1 (i32.const 5800) "\02\00\00\00\06\00\00\000\00.\000")
- (data $66 (i32.const 5820) "\1c")
- (data $66.1 (i32.const 5832) "\02\00\00\00\06\00\00\00N\00a\00N")
- (data $67 (i32.const 5852) ",")
- (data $67.1 (i32.const 5864) "\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y")
- (data $68 (i32.const 5900) ",")
- (data $68.1 (i32.const 5912) "\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y")
- (data $70 (i32.const 6008) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
- (data $71 (i32.const 6704) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
- (data $72 (i32.const 6880) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
- (data $73 (i32.const 6924) "\1c")
- (data $73.1 (i32.const 6936) "\02\00\00\00\02\00\00\00.")
- (data $74 (i32.const 6956) "L")
- (data $74.1 (i32.const 6968) "\02\00\00\00<\00\00\00*\00*\00*\00*\00*\00*\00*\00*\00*\00*\00 \00l\00a\00r\00g\00e\00N\00u\00m\00b\00e\00r\00A\00d\00d\00i\00t\00i\00o\00n")
- (data $75 (i32.const 7036) "<")
- (data $75.1 (i32.const 7048) "\02\00\00\00$\00\00\00#\00#\00#\00#\00#\00#\00#\00#\00#\00#\00 \00a\00F\00i\00b\00:\00:\00 ")
- (data $76 (i32.const 7100) "<")
- (data $76.1 (i32.const 7112) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
- (data $77 (i32.const 7164) "<")
- (data $77.1 (i32.const 7176) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
- (data $78 (i32.const 7232) "\0b\00\00\00 \00\00\00 \00\00\00 \00\00\00\00\00\00\00\02\t\00\00\04A")
- (data $78.1 (i32.const 7276) "\02A")
+ (data $1 (i32.const 1084) "\1c")
+ (data $1.1 (i32.const 1096) "\01")
+ (data $2 (i32.const 1116) "<")
+ (data $2.1 (i32.const 1128) "\02\00\00\00(\00\00\00A\00l\00l\00o\00c\00a\00t\00i\00o\00n\00 \00t\00o\00o\00 \00l\00a\00r\00g\00e")
+ (data $3 (i32.const 1180) "<")
+ (data $3.1 (i32.const 1192) "\02\00\00\00 \00\00\00~\00l\00i\00b\00/\00r\00t\00/\00i\00t\00c\00m\00s\00.\00t\00s")
+ (data $6 (i32.const 1308) "<")
+ (data $6.1 (i32.const 1320) "\02\00\00\00$\00\00\00I\00n\00d\00e\00x\00 \00o\00u\00t\00 \00o\00f\00 \00r\00a\00n\00g\00e")
+ (data $7 (i32.const 1372) ",")
+ (data $7.1 (i32.const 1384) "\02\00\00\00\14\00\00\00~\00l\00i\00b\00/\00r\00t\00.\00t\00s")
+ (data $9 (i32.const 1452) "<")
+ (data $9.1 (i32.const 1464) "\02\00\00\00\1e\00\00\00~\00l\00i\00b\00/\00r\00t\00/\00t\00l\00s\00f\00.\00t\00s")
+ (data $10 (i32.const 1516) "\1c")
+ (data $10.1 (i32.const 1528) "\02")
+ (data $11 (i32.const 1548) ",")
+ (data $11.1 (i32.const 1560) "\02\00\00\00\1c\00\00\00I\00n\00v\00a\00l\00i\00d\00 \00l\00e\00n\00g\00t\00h")
+ (data $12 (i32.const 1596) ",")
+ (data $12.1 (i32.const 1608) "\02\00\00\00\1a\00\00\00~\00l\00i\00b\00/\00a\00r\00r\00a\00y\00.\00t\00s")
+ (data $13 (i32.const 1644) "\1c")
+ (data $13.1 (i32.const 1656) "\05\00\00\00\08\00\00\00\01")
+ (data $14 (i32.const 1676) "\1c")
+ (data $14.1 (i32.const 1688) "\06\00\00\00\08\00\00\00\02")
+ (data $15 (i32.const 1708) "|")
+ (data $15.1 (i32.const 1720) "\02\00\00\00d\00\00\00t\00o\00S\00t\00r\00i\00n\00g\00(\00)\00 \00r\00a\00d\00i\00x\00 \00a\00r\00g\00u\00m\00e\00n\00t\00 \00m\00u\00s\00t\00 \00b\00e\00 \00b\00e\00t\00w\00e\00e\00n\00 \002\00 \00a\00n\00d\00 \003\006")
+ (data $16 (i32.const 1836) "<")
+ (data $16.1 (i32.const 1848) "\02\00\00\00&\00\00\00~\00l\00i\00b\00/\00u\00t\00i\00l\00/\00n\00u\00m\00b\00e\00r\00.\00t\00s")
+ (data $17 (i32.const 1900) "\1c")
+ (data $17.1 (i32.const 1912) "\02\00\00\00\02\00\00\000")
+ (data $18 (i32.const 1932) "0\000\000\001\000\002\000\003\000\004\000\005\000\006\000\007\000\008\000\009\001\000\001\001\001\002\001\003\001\004\001\005\001\006\001\007\001\008\001\009\002\000\002\001\002\002\002\003\002\004\002\005\002\006\002\007\002\008\002\009\003\000\003\001\003\002\003\003\003\004\003\005\003\006\003\007\003\008\003\009\004\000\004\001\004\002\004\003\004\004\004\005\004\006\004\007\004\008\004\009\005\000\005\001\005\002\005\003\005\004\005\005\005\006\005\007\005\008\005\009\006\000\006\001\006\002\006\003\006\004\006\005\006\006\006\007\006\008\006\009\007\000\007\001\007\002\007\003\007\004\007\005\007\006\007\007\007\008\007\009\008\000\008\001\008\002\008\003\008\004\008\005\008\006\008\007\008\008\008\009\009\000\009\001\009\002\009\003\009\004\009\005\009\006\009\007\009\008\009\009")
+ (data $19 (i32.const 2332) "\1c\04")
+ (data $19.1 (i32.const 2344) "\02\00\00\00\00\04\00\000\000\000\001\000\002\000\003\000\004\000\005\000\006\000\007\000\008\000\009\000\00a\000\00b\000\00c\000\00d\000\00e\000\00f\001\000\001\001\001\002\001\003\001\004\001\005\001\006\001\007\001\008\001\009\001\00a\001\00b\001\00c\001\00d\001\00e\001\00f\002\000\002\001\002\002\002\003\002\004\002\005\002\006\002\007\002\008\002\009\002\00a\002\00b\002\00c\002\00d\002\00e\002\00f\003\000\003\001\003\002\003\003\003\004\003\005\003\006\003\007\003\008\003\009\003\00a\003\00b\003\00c\003\00d\003\00e\003\00f\004\000\004\001\004\002\004\003\004\004\004\005\004\006\004\007\004\008\004\009\004\00a\004\00b\004\00c\004\00d\004\00e\004\00f\005\000\005\001\005\002\005\003\005\004\005\005\005\006\005\007\005\008\005\009\005\00a\005\00b\005\00c\005\00d\005\00e\005\00f\006\000\006\001\006\002\006\003\006\004\006\005\006\006\006\007\006\008\006\009\006\00a\006\00b\006\00c\006\00d\006\00e\006\00f\007\000\007\001\007\002\007\003\007\004\007\005\007\006\007\007\007\008\007\009\007\00a\007\00b\007\00c\007\00d\007\00e\007\00f\008\000\008\001\008\002\008\003\008\004\008\005\008\006\008\007\008\008\008\009\008\00a\008\00b\008\00c\008\00d\008\00e\008\00f\009\000\009\001\009\002\009\003\009\004\009\005\009\006\009\007\009\008\009\009\009\00a\009\00b\009\00c\009\00d\009\00e\009\00f\00a\000\00a\001\00a\002\00a\003\00a\004\00a\005\00a\006\00a\007\00a\008\00a\009\00a\00a\00a\00b\00a\00c\00a\00d\00a\00e\00a\00f\00b\000\00b\001\00b\002\00b\003\00b\004\00b\005\00b\006\00b\007\00b\008\00b\009\00b\00a\00b\00b\00b\00c\00b\00d\00b\00e\00b\00f\00c\000\00c\001\00c\002\00c\003\00c\004\00c\005\00c\006\00c\007\00c\008\00c\009\00c\00a\00c\00b\00c\00c\00c\00d\00c\00e\00c\00f\00d\000\00d\001\00d\002\00d\003\00d\004\00d\005\00d\006\00d\007\00d\008\00d\009\00d\00a\00d\00b\00d\00c\00d\00d\00d\00e\00d\00f\00e\000\00e\001\00e\002\00e\003\00e\004\00e\005\00e\006\00e\007\00e\008\00e\009\00e\00a\00e\00b\00e\00c\00e\00d\00e\00e\00e\00f\00f\000\00f\001\00f\002\00f\003\00f\004\00f\005\00f\006\00f\007\00f\008\00f\009\00f\00a\00f\00b\00f\00c\00f\00d\00f\00e\00f\00f")
+ (data $20 (i32.const 3388) "\\")
+ (data $20.1 (i32.const 3400) "\02\00\00\00H\00\00\000\001\002\003\004\005\006\007\008\009\00a\00b\00c\00d\00e\00f\00g\00h\00i\00j\00k\00l\00m\00n\00o\00p\00q\00r\00s\00t\00u\00v\00w\00x\00y\00z")
+ (data $21 (i32.const 3484) "\1c")
+ (data $21.1 (i32.const 3496) "\07\00\00\00\08\00\00\00\03")
+ (data $22 (i32.const 3516) "\1c")
+ (data $22.1 (i32.const 3528) "\08\00\00\00\08\00\00\00\04")
+ (data $23 (i32.const 3548) "\1c")
+ (data $23.1 (i32.const 3560) "\01\00\00\00\04\00\00\00\80\07")
+ (data $24 (i32.const 3580) "\1c")
+ (data $24.1 (i32.const 3592) "\01")
+ (data $25 (i32.const 3612) "|")
+ (data $25.1 (i32.const 3624) "\02\00\00\00^\00\00\00E\00l\00e\00m\00e\00n\00t\00 \00t\00y\00p\00e\00 \00m\00u\00s\00t\00 \00b\00e\00 \00n\00u\00l\00l\00a\00b\00l\00e\00 \00i\00f\00 \00a\00r\00r\00a\00y\00 \00i\00s\00 \00h\00o\00l\00e\00y")
+ (data $26 (i32.const 3740) "\1c")
+ (data $26.1 (i32.const 3752) "\02\00\00\00\06\00\00\000\00.\000")
+ (data $27 (i32.const 3772) "\1c")
+ (data $27.1 (i32.const 3784) "\02\00\00\00\06\00\00\00N\00a\00N")
+ (data $28 (i32.const 3804) ",")
+ (data $28.1 (i32.const 3816) "\02\00\00\00\12\00\00\00-\00I\00n\00f\00i\00n\00i\00t\00y")
+ (data $29 (i32.const 3852) ",")
+ (data $29.1 (i32.const 3864) "\02\00\00\00\10\00\00\00I\00n\00f\00i\00n\00i\00t\00y")
+ (data $31 (i32.const 3960) "\88\02\1c\08\a0\d5\8f\fav\bf>\a2\7f\e1\ae\bav\acU0 \fb\16\8b\ea5\ce]J\89B\cf-;eU\aa\b0k\9a\dfE\1a=\03\cf\1a\e6\ca\c6\9a\c7\17\fep\abO\dc\bc\be\fc\b1w\ff\0c\d6kA\ef\91V\be<\fc\7f\90\ad\1f\d0\8d\83\9aU1(\\Q\d3\b5\c9\a6\ad\8f\acq\9d\cb\8b\ee#w\"\9c\eamSx@\91I\cc\aeW\ce\b6]y\12<\827V\fbM6\94\10\c2O\98H8o\ea\96\90\c7:\82%\cb\85t\d7\f4\97\bf\97\cd\cf\86\a0\e5\ac*\17\98\n4\ef\8e\b25*\fbg8\b2;?\c6\d2\df\d4\c8\84\ba\cd\d3\1a\'D\dd\c5\96\c9%\bb\ce\9fk\93\84\a5b}$l\ac\db\f6\da_\rXf\ab\a3&\f1\c3\de\93\f8\e2\f3\b8\80\ff\aa\a8\ad\b5\b5\8bJ|l\05_b\87S0\c14`\ff\bc\c9U&\ba\91\8c\85N\96\bd~)p$w\f9\df\8f\b8\e5\b8\9f\bd\df\a6\94}t\88\cf_\a9\f8\cf\9b\a8\8f\93pD\b9k\15\0f\bf\f8\f0\08\8a\b611eU%\b0\cd\ac\7f{\d0\c6\e2?\99\06;+*\c4\10\\\e4\d3\92si\99$$\aa\0e\ca\00\83\f2\b5\87\fd\eb\1a\11\92d\08\e5\bc\cc\88Po\t\cc\bc\8c,e\19\e2X\17\b7\d1\00\00\00\00\00\00@\9c\00\00\00\00\10\a5\d4\e8\00\00b\ac\c5\ebx\ad\84\t\94\f8x9?\81\b3\15\07\c9{\ce\97\c0p\\\ea{\ce2~\8fh\80\e9\ab\a48\d2\d5E\"\9a\17&\'O\9f\'\fb\c4\d41\a2c\ed\a8\ad\c8\8c8e\de\b0\dbe\ab\1a\8e\08\c7\83\9a\1dqB\f9\1d]\c4X\e7\1b\a6,iM\92\ea\8dp\1ad\ee\01\daJw\ef\9a\99\a3m\a2\85k}\b4{x\t\f2w\18\ddy\a1\e4T\b4\c2\c5\9b[\92\86[\86=]\96\c8\c5S5\c8\b3\a0\97\fa\\\b4*\95\e3_\a0\99\bd\9fF\de%\8c9\db4\c2\9b\a5\\\9f\98\a3r\9a\c6\f6\ce\be\e9TS\bf\dc\b7\e2A\"\f2\17\f3\fc\88\a5x\\\d3\9b\ce \cc\dfS!{\f3Z\16\98:0\1f\97\dc\b5\a0\e2\96\b3\e3\\S\d1\d9\a8<D\a7\a4\d9|\9b\fb\10D\a4\a7LLv\bb\1a\9c@\b6\ef\8e\ab\8b,\84W\a6\10\ef\1f\d0)1\91\e9\e5\a4\10\9b\9d\0c\9c\a1\fb\9b\10\e7)\f4;b\d9 (\ac\85\cf\a7z^KD\80-\dd\ac\03@\e4!\bf\8f\ffD^/\9cg\8eA\b8\8c\9c\9d\173\d4\a9\1b\e3\b4\92\db\19\9e\d9w\df\ban\bf\96\ebk\ee\f0\9b;\02\87\af")
+ (data $32 (i32.const 4656) "<\fbW\fbr\fb\8c\fb\a7\fb\c1\fb\dc\fb\f6\fb\11\fc,\fcF\fca\fc{\fc\96\fc\b1\fc\cb\fc\e6\fc\00\fd\1b\fd5\fdP\fdk\fd\85\fd\a0\fd\ba\fd\d5\fd\ef\fd\n\fe%\fe?\feZ\fet\fe\8f\fe\a9\fe\c4\fe\df\fe\f9\fe\14\ff.\ffI\ffc\ff~\ff\99\ff\b3\ff\ce\ff\e8\ff\03\00\1e\008\00S\00m\00\88\00\a2\00\bd\00\d8\00\f2\00\r\01\'\01B\01\\\01w\01\92\01\ac\01\c7\01\e1\01\fc\01\16\021\02L\02f\02\81\02\9b\02\b6\02\d0\02\eb\02\06\03 \03;\03U\03p\03\8b\03\a5\03\c0\03\da\03\f5\03\0f\04*\04")
+ (data $33 (i32.const 4832) "\01\00\00\00\n\00\00\00d\00\00\00\e8\03\00\00\10\'\00\00\a0\86\01\00@B\0f\00\80\96\98\00\00\e1\f5\05\00\ca\9a;")
+ (data $34 (i32.const 4876) "\1c")
+ (data $34.1 (i32.const 4888) "\02\00\00\00\02\00\00\00.")
+ (data $35 (i32.const 4908) "<")
+ (data $35.1 (i32.const 4920) "\02\00\00\00*\00\00\00O\00b\00j\00e\00c\00t\00 \00a\00l\00r\00e\00a\00d\00y\00 \00p\00i\00n\00n\00e\00d")
+ (data $36 (i32.const 4972) "<")
+ (data $36.1 (i32.const 4984) "\02\00\00\00(\00\00\00O\00b\00j\00e\00c\00t\00 \00i\00s\00 \00n\00o\00t\00 \00p\00i\00n\00n\00e\00d")
+ (data $37 (i32.const 5040) "\n\00\00\00 \00\00\00 \00\00\00 \00\00\00\00\00\00\00\02\t")
+ (data $37.1 (i32.const 5080) "\02A")
  (table $0 5 5 funcref)
  (elem $0 (i32.const 1) $start:assembly/helper~anonymous|0 $start:assembly/helper~anonymous|1 $start:assembly/helper~anonymous|2 $start:assembly/helper~anonymous|3)
  (export "largeNumberAddition" (global $assembly/helper/largeNumberAddition))
@@ -189,21 +112,21 @@
  (func $~lib/rt/itcms/visitRoots
   (local $0 i32)
   (local $1 i32)
-  i32.const 1696
+  i32.const 1328
   call $~lib/rt/itcms/__visit
-  i32.const 3520
+  i32.const 1568
   call $~lib/rt/itcms/__visit
-  i32.const 5376
+  i32.const 3632
   call $~lib/rt/itcms/__visit
-  i32.const 1504
+  i32.const 1136
   call $~lib/rt/itcms/__visit
-  i32.const 7120
+  i32.const 4928
   call $~lib/rt/itcms/__visit
-  i32.const 7184
+  i32.const 4992
   call $~lib/rt/itcms/__visit
-  i32.const 2304
+  i32.const 2352
   call $~lib/rt/itcms/__visit
-  i32.const 3360
+  i32.const 3408
   call $~lib/rt/itcms/__visit
   global.get $~lib/rt/itcms/pinSpace
   local.tee $1
@@ -224,7 +147,7 @@
     i32.ne
     if
      i32.const 0
-     i32.const 1568
+     i32.const 1200
      i32.const 160
      i32.const 16
      call $~lib/builtins/abort
@@ -256,13 +179,13 @@
    i32.load offset=8
    i32.eqz
    local.get $0
-   i32.const 40048
+   i32.const 37852
    i32.lt_u
    i32.and
    i32.eqz
    if
     i32.const 0
-    i32.const 1568
+    i32.const 1200
     i32.const 128
     i32.const 18
     call $~lib/builtins/abort
@@ -276,7 +199,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1568
+   i32.const 1200
    i32.const 132
    i32.const 16
    call $~lib/builtins/abort
@@ -308,7 +231,7 @@
    i32.eqz
    if
     i32.const 0
-    i32.const 1568
+    i32.const 1200
     i32.const 148
     i32.const 30
     call $~lib/builtins/abort
@@ -330,12 +253,12 @@
    i32.const 1
   else
    local.get $2
-   i32.const 7232
+   i32.const 5040
    i32.load
    i32.gt_u
    if
-    i32.const 1696
-    i32.const 1760
+    i32.const 1328
+    i32.const 1392
     i32.const 21
     i32.const 28
     call $~lib/builtins/abort
@@ -344,7 +267,7 @@
    local.get $2
    i32.const 2
    i32.shl
-   i32.const 7236
+   i32.const 5044
    i32.add
    i32.load
    i32.const 32
@@ -415,7 +338,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 268
    i32.const 14
    call $~lib/builtins/abort
@@ -429,7 +352,7 @@
   i32.lt_u
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 270
    i32.const 14
    call $~lib/builtins/abort
@@ -475,7 +398,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 284
    i32.const 14
    call $~lib/builtins/abort
@@ -558,7 +481,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 201
    i32.const 14
    call $~lib/builtins/abort
@@ -572,7 +495,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 203
    i32.const 14
    call $~lib/builtins/abort
@@ -633,7 +556,7 @@
    i32.eqz
    if
     i32.const 0
-    i32.const 1840
+    i32.const 1472
     i32.const 221
     i32.const 16
     call $~lib/builtins/abort
@@ -666,7 +589,7 @@
   i32.lt_u
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 233
    i32.const 14
    call $~lib/builtins/abort
@@ -681,7 +604,7 @@
   i32.ne
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 234
    i32.const 14
    call $~lib/builtins/abort
@@ -732,7 +655,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 251
    i32.const 14
    call $~lib/builtins/abort
@@ -804,7 +727,7 @@
   i64.lt_u
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 382
    i32.const 14
    call $~lib/builtins/abort
@@ -829,7 +752,7 @@
    i32.gt_u
    if
     i32.const 0
-    i32.const 1840
+    i32.const 1472
     i32.const 389
     i32.const 16
     call $~lib/builtins/abort
@@ -856,7 +779,7 @@
    i32.gt_u
    if
     i32.const 0
-    i32.const 1840
+    i32.const 1472
     i32.const 402
     i32.const 5
     call $~lib/builtins/abort
@@ -928,10 +851,10 @@
   if
    unreachable
   end
-  i32.const 40048
+  i32.const 37856
   i32.const 0
   i32.store
-  i32.const 41616
+  i32.const 39424
   i32.const 0
   i32.store
   loop $for-loop|0
@@ -942,7 +865,7 @@
     local.get $0
     i32.const 2
     i32.shl
-    i32.const 40048
+    i32.const 37856
     i32.add
     i32.const 0
     i32.store offset=4
@@ -960,7 +883,7 @@
       i32.add
       i32.const 2
       i32.shl
-      i32.const 40048
+      i32.const 37856
       i32.add
       i32.const 0
       i32.store offset=96
@@ -978,14 +901,14 @@
     br $for-loop|0
    end
   end
-  i32.const 40048
-  i32.const 41620
+  i32.const 37856
+  i32.const 39428
   memory.size
   i64.extend_i32_s
   i64.const 16
   i64.shl
   call $~lib/rt/tlsf/addMemory
-  i32.const 40048
+  i32.const 37856
   global.set $~lib/rt/tlsf/ROOT
  )
  (func $~lib/rt/itcms/step (result i32)
@@ -1070,7 +993,7 @@
      local.set $0
      loop $while-continue|0
       local.get $0
-      i32.const 40048
+      i32.const 37852
       i32.lt_u
       if
        local.get $0
@@ -1159,14 +1082,14 @@
     i32.ne
     if
      i32.const 0
-     i32.const 1568
+     i32.const 1200
      i32.const 229
      i32.const 20
      call $~lib/builtins/abort
      unreachable
     end
     local.get $0
-    i32.const 40048
+    i32.const 37852
     i32.lt_u
     if
      local.get $0
@@ -1189,7 +1112,7 @@
      i32.const 4
      i32.add
      local.tee $0
-     i32.const 40048
+     i32.const 37852
      i32.ge_u
      if
       global.get $~lib/rt/tlsf/ROOT
@@ -1219,7 +1142,7 @@
       end
       if
        i32.const 0
-       i32.const 1840
+       i32.const 1472
        i32.const 562
        i32.const 3
        call $~lib/builtins/abort
@@ -1304,7 +1227,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 334
    i32.const 14
    call $~lib/builtins/abort
@@ -1356,7 +1279,7 @@
     i32.eqz
     if
      i32.const 0
-     i32.const 1840
+     i32.const 1472
      i32.const 347
      i32.const 18
      call $~lib/builtins/abort
@@ -1388,8 +1311,8 @@
   i32.const 1073741804
   i32.ge_u
   if
-   i32.const 1504
-   i32.const 1568
+   i32.const 1136
+   i32.const 1200
    i32.const 261
    i32.const 31
    call $~lib/builtins/abort
@@ -1399,7 +1322,7 @@
   global.get $~lib/rt/itcms/threshold
   i32.ge_u
   if
-   block $__inlined_func$~lib/rt/itcms/interrupt$70
+   block $__inlined_func$~lib/rt/itcms/interrupt$69
     i32.const 2048
     local.set $2
     loop $do-loop|0
@@ -1420,7 +1343,7 @@
       i32.const 1024
       i32.add
       global.set $~lib/rt/itcms/threshold
-      br $__inlined_func$~lib/rt/itcms/interrupt$70
+      br $__inlined_func$~lib/rt/itcms/interrupt$69
      end
      local.get $2
      i32.const 0
@@ -1453,8 +1376,8 @@
   i32.const 1073741820
   i32.gt_u
   if
-   i32.const 1504
-   i32.const 1840
+   i32.const 1136
+   i32.const 1472
    i32.const 461
    i32.const 29
    call $~lib/builtins/abort
@@ -1556,7 +1479,7 @@
    i32.eqz
    if
     i32.const 0
-    i32.const 1840
+    i32.const 1472
     i32.const 499
     i32.const 16
     call $~lib/builtins/abort
@@ -1571,7 +1494,7 @@
   i32.gt_u
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 501
    i32.const 14
    call $~lib/builtins/abort
@@ -1590,7 +1513,7 @@
   i32.and
   if
    i32.const 0
-   i32.const 1840
+   i32.const 1472
    i32.const 361
    i32.const 14
    call $~lib/builtins/abort
@@ -1695,110 +1618,6 @@
   memory.fill
   local.get $1
  )
- (func $~lib/util/number/utoa32_dec_lut (param $0 i32) (param $1 i32) (param $2 i32)
-  (local $3 i32)
-  loop $while-continue|0
-   local.get $1
-   i32.const 10000
-   i32.ge_u
-   if
-    local.get $1
-    i32.const 10000
-    i32.rem_u
-    local.set $3
-    local.get $1
-    i32.const 10000
-    i32.div_u
-    local.set $1
-    local.get $0
-    local.get $2
-    i32.const 4
-    i32.sub
-    local.tee $2
-    i32.const 1
-    i32.shl
-    i32.add
-    local.get $3
-    i32.const 100
-    i32.div_u
-    i32.const 2
-    i32.shl
-    i32.const 1884
-    i32.add
-    i64.load32_u
-    local.get $3
-    i32.const 100
-    i32.rem_u
-    i32.const 2
-    i32.shl
-    i32.const 1884
-    i32.add
-    i64.load32_u
-    i64.const 32
-    i64.shl
-    i64.or
-    i64.store
-    br $while-continue|0
-   end
-  end
-  local.get $1
-  i32.const 100
-  i32.ge_u
-  if
-   local.get $0
-   local.get $2
-   i32.const 2
-   i32.sub
-   local.tee $2
-   i32.const 1
-   i32.shl
-   i32.add
-   local.get $1
-   i32.const 100
-   i32.rem_u
-   i32.const 2
-   i32.shl
-   i32.const 1884
-   i32.add
-   i32.load
-   i32.store
-   local.get $1
-   i32.const 100
-   i32.div_u
-   local.set $1
-  end
-  local.get $1
-  i32.const 10
-  i32.ge_u
-  if
-   local.get $0
-   local.get $2
-   i32.const 2
-   i32.sub
-   i32.const 1
-   i32.shl
-   i32.add
-   local.get $1
-   i32.const 2
-   i32.shl
-   i32.const 1884
-   i32.add
-   i32.load
-   i32.store
-  else
-   local.get $0
-   local.get $2
-   i32.const 1
-   i32.sub
-   i32.const 1
-   i32.shl
-   i32.add
-   local.get $1
-   i32.const 48
-   i32.add
-   i32.store16
-  end
- )
  (func $~lib/rt/itcms/__link (param $0 i32) (param $1 i32) (param $2 i32)
   (local $3 i32)
   local.get $1
@@ -1810,7 +1629,7 @@
   i32.eqz
   if
    i32.const 0
-   i32.const 1568
+   i32.const 1200
    i32.const 295
    i32.const 14
    call $~lib/builtins/abort
@@ -1858,94 +1677,109 @@
    end
   end
  )
- (func $~lib/util/number/itoa_buffered<i32> (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  local.get $1
-  i32.const 0
-  i32.lt_s
-  local.tee $2
-  if
-   local.get $0
-   i32.const 45
-   i32.store16
-   i32.const 0
+ (func $~lib/util/number/utoa32_dec_lut (param $0 i32) (param $1 i32) (param $2 i32)
+  (local $3 i32)
+  loop $while-continue|0
    local.get $1
-   i32.sub
-   local.set $1
-  end
-  local.get $0
-  local.get $2
-  i32.const 1
-  i32.shl
-  i32.add
-  local.set $0
-  local.get $1
-  i32.const 10
-  i32.lt_u
-  if
-   local.get $0
-   local.get $1
-   i32.const 48
-   i32.or
-   i32.store16
-   local.get $2
-   i32.const 1
-   i32.add
-   return
-  end
-  local.get $0
-  local.get $1
-  local.get $1
-  i32.const 100000
-  i32.lt_u
-  if (result i32)
-   local.get $1
-   i32.const 100
-   i32.lt_u
-   if (result i32)
-    local.get $1
-    i32.const 10
-    i32.ge_u
-    i32.const 1
-    i32.add
-   else
+   i32.const 10000
+   i32.ge_u
+   if
     local.get $1
     i32.const 10000
-    i32.ge_u
-    i32.const 3
-    i32.add
+    i32.rem_u
+    local.set $3
     local.get $1
-    i32.const 1000
-    i32.ge_u
+    i32.const 10000
+    i32.div_u
+    local.set $1
+    local.get $0
+    local.get $2
+    i32.const 4
+    i32.sub
+    local.tee $2
+    i32.const 1
+    i32.shl
     i32.add
-   end
-  else
-   local.get $1
-   i32.const 10000000
-   i32.lt_u
-   if (result i32)
-    local.get $1
-    i32.const 1000000
-    i32.ge_u
-    i32.const 6
+    local.get $3
+    i32.const 100
+    i32.div_u
+    i32.const 2
+    i32.shl
+    i32.const 1932
     i32.add
-   else
-    local.get $1
-    i32.const 1000000000
-    i32.ge_u
-    i32.const 8
+    i64.load32_u
+    local.get $3
+    i32.const 100
+    i32.rem_u
+    i32.const 2
+    i32.shl
+    i32.const 1932
     i32.add
-    local.get $1
-    i32.const 100000000
-    i32.ge_u
-    i32.add
+    i64.load32_u
+    i64.const 32
+    i64.shl
+    i64.or
+    i64.store
+    br $while-continue|0
    end
   end
-  local.tee $0
-  call $~lib/util/number/utoa32_dec_lut
-  local.get $0
-  local.get $2
-  i32.add
+  local.get $1
+  i32.const 100
+  i32.ge_u
+  if
+   local.get $0
+   local.get $2
+   i32.const 2
+   i32.sub
+   local.tee $2
+   i32.const 1
+   i32.shl
+   i32.add
+   local.get $1
+   i32.const 100
+   i32.rem_u
+   i32.const 2
+   i32.shl
+   i32.const 1932
+   i32.add
+   i32.load
+   i32.store
+   local.get $1
+   i32.const 100
+   i32.div_u
+   local.set $1
+  end
+  local.get $1
+  i32.const 10
+  i32.ge_u
+  if
+   local.get $0
+   local.get $2
+   i32.const 2
+   i32.sub
+   i32.const 1
+   i32.shl
+   i32.add
+   local.get $1
+   i32.const 2
+   i32.shl
+   i32.const 1932
+   i32.add
+   i32.load
+   i32.store
+  else
+   local.get $0
+   local.get $2
+   i32.const 1
+   i32.sub
+   i32.const 1
+   i32.shl
+   i32.add
+   local.get $1
+   i32.const 48
+   i32.add
+   i32.store16
+  end
  )
  (func $~lib/util/number/genDigits (param $0 i64) (param $1 i64) (param $2 i32) (param $3 i64) (param $4 i32) (result i32)
   (local $5 i32)
@@ -2159,7 +1993,7 @@
      local.get $2
      i32.const 1
      i32.shl
-     i32.const 5952
+     i32.const 3904
      i32.add
      local.get $6
      i32.const 65535
@@ -2191,7 +2025,7 @@
      local.get $8
      i32.const 2
      i32.shl
-     i32.const 6880
+     i32.const 4832
      i32.add
      i64.load32_u
      local.get $1
@@ -2200,7 +2034,7 @@
      local.get $4
      i32.const 1
      i32.shl
-     i32.const 5950
+     i32.const 3902
      i32.add
      local.tee $2
      i32.load16_u
@@ -2281,7 +2115,7 @@
     local.get $2
     i32.const 1
     i32.shl
-    i32.const 5952
+    i32.const 3904
     i32.add
     local.get $0
     i32.wrap_i64
@@ -2313,7 +2147,7 @@
   i32.sub
   i32.const 2
   i32.shl
-  i32.const 6880
+  i32.const 4832
   i32.add
   i64.load32_u
   i64.mul
@@ -2321,7 +2155,7 @@
   local.get $4
   i32.const 1
   i32.shl
-  i32.const 5950
+  i32.const 3902
   i32.add
   local.tee $2
   i32.load16_u
@@ -2719,7 +2553,7 @@
   f64.lt
   local.tee $2
   if (result f64)
-   i32.const 5952
+   i32.const 3904
    i32.const 45
    i32.store16
    local.get $0
@@ -2818,14 +2652,14 @@
   i32.sub
   global.set $~lib/util/number/_K
   local.get $8
-  i32.const 6008
+  i32.const 3960
   i32.add
   i64.load
   global.set $~lib/util/number/_frc_pow
   local.get $4
   i32.const 1
   i32.shl
-  i32.const 6704
+  i32.const 4656
   i32.add
   i32.load16_s
   global.set $~lib/util/number/_exp_pow
@@ -2893,7 +2727,7 @@
   local.get $2
   i32.const 1
   i32.shl
-  i32.const 5952
+  i32.const 3904
   i32.add
   local.get $1
   local.get $10
@@ -2997,8 +2831,8 @@
    i32.const 3
    i32.eq
    if
-    i32.const 7120
-    i32.const 1568
+    i32.const 4928
+    i32.const 1200
     i32.const 338
     i32.const 7
     call $~lib/builtins/abort
@@ -3050,8 +2884,8 @@
   i32.const 3
   i32.ne
   if
-   i32.const 7184
-   i32.const 1568
+   i32.const 4992
+   i32.const 1200
    i32.const 352
    i32.const 5
    call $~lib/builtins/abort
@@ -3135,80 +2969,51 @@
     block $folding-inner1
      block $invalid
       block $~lib/array/Array<~lib/string/String>
-       block $~lib/staticarray/StaticArray<~lib/string/String>
-        block $~lib/array/Array<i32>
-         block $~lib/arraybuffer/ArrayBufferView
-          block $~lib/string/String
-           block $~lib/arraybuffer/ArrayBuffer
-            block $~lib/object/Object
-             local.get $0
-             i32.const 8
-             i32.sub
-             i32.load
-             br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/array/Array<i32> $~lib/staticarray/StaticArray<~lib/string/String> $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $~lib/array/Array<~lib/string/String> $invalid
-            end
-            return
+       block $~lib/array/Array<i32>
+        block $~lib/arraybuffer/ArrayBufferView
+         block $~lib/string/String
+          block $~lib/arraybuffer/ArrayBuffer
+           block $~lib/object/Object
+            local.get $0
+            i32.const 8
+            i32.sub
+            i32.load
+            br_table $~lib/object/Object $~lib/arraybuffer/ArrayBuffer $~lib/string/String $~lib/arraybuffer/ArrayBufferView $~lib/array/Array<i32> $folding-inner2 $folding-inner2 $folding-inner2 $folding-inner2 $~lib/array/Array<~lib/string/String> $invalid
            end
            return
           end
           return
          end
-         local.get $0
-         i32.load
-         local.tee $0
-         if
-          local.get $0
-          call $~lib/rt/itcms/__visit
-         end
          return
         end
-        global.get $~lib/memory/__stack_pointer
-        i32.const 4
-        i32.sub
-        global.set $~lib/memory/__stack_pointer
-        global.get $~lib/memory/__stack_pointer
-        i32.const 7280
-        i32.lt_s
-        br_if $folding-inner3
-        global.get $~lib/memory/__stack_pointer
-        i32.const 0
-        i32.store
-        br $folding-inner1
-       end
-       local.get $0
-       local.get $0
-       i32.const 20
-       i32.sub
-       i32.load offset=16
-       i32.add
-       local.set $1
-       loop $while-continue|0
         local.get $0
-        local.get $1
-        i32.lt_u
+        i32.load
+        local.tee $0
         if
          local.get $0
-         i32.load
-         local.tee $2
-         if
-          local.get $2
-          call $~lib/rt/itcms/__visit
-         end
-         local.get $0
-         i32.const 4
-         i32.add
-         local.set $0
-         br $while-continue|0
+         call $~lib/rt/itcms/__visit
         end
+        return
        end
-       return
+       global.get $~lib/memory/__stack_pointer
+       i32.const 4
+       i32.sub
+       global.set $~lib/memory/__stack_pointer
+       global.get $~lib/memory/__stack_pointer
+       i32.const 5084
+       i32.lt_s
+       br_if $folding-inner3
+       global.get $~lib/memory/__stack_pointer
+       i32.const 0
+       i32.store
+       br $folding-inner1
       end
       global.get $~lib/memory/__stack_pointer
       i32.const 4
       i32.sub
       global.set $~lib/memory/__stack_pointer
       global.get $~lib/memory/__stack_pointer
-      i32.const 7280
+      i32.const 5084
       i32.lt_s
       br_if $folding-inner3
       global.get $~lib/memory/__stack_pointer
@@ -3230,7 +3035,7 @@
       i32.shl
       i32.add
       local.set $2
-      loop $while-continue|01
+      loop $while-continue|0
        local.get $1
        local.get $2
        i32.lt_u
@@ -3246,7 +3051,7 @@
         i32.const 4
         i32.add
         local.set $1
-        br $while-continue|01
+        br $while-continue|0
        end
       end
       br $folding-inner1
@@ -3270,7 +3075,7 @@
    i32.sub
    global.set $~lib/memory/__stack_pointer
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
    br_if $folding-inner3
    global.get $~lib/memory/__stack_pointer
@@ -3288,8 +3093,8 @@
    global.set $~lib/memory/__stack_pointer
    return
   end
-  i32.const 40080
-  i32.const 40128
+  i32.const 37872
+  i32.const 37920
   i32.const 1
   i32.const 1
   call $~lib/builtins/abort
@@ -3299,444 +3104,35 @@
   memory.size
   i32.const 16
   i32.shl
-  i32.const 40048
+  i32.const 37852
   i32.sub
   i32.const 1
   i32.shr_u
   global.set $~lib/rt/itcms/threshold
-  i32.const 1620
-  i32.const 1616
+  i32.const 1252
+  i32.const 1248
   i32.store
-  i32.const 1624
-  i32.const 1616
+  i32.const 1256
+  i32.const 1248
   i32.store
-  i32.const 1616
+  i32.const 1248
   global.set $~lib/rt/itcms/pinSpace
-  i32.const 1652
-  i32.const 1648
+  i32.const 1284
+  i32.const 1280
   i32.store
-  i32.const 1656
-  i32.const 1648
+  i32.const 1288
+  i32.const 1280
   i32.store
-  i32.const 1648
+  i32.const 1280
   global.set $~lib/rt/itcms/toSpace
-  i32.const 1796
-  i32.const 1792
+  i32.const 1428
+  i32.const 1424
   i32.store
-  i32.const 1800
-  i32.const 1792
+  i32.const 1432
+  i32.const 1424
   i32.store
-  i32.const 1792
+  i32.const 1424
   global.set $~lib/rt/itcms/fromSpace
- )
- (func $~lib/util/string/joinStringArray (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  (local $6 i32)
-  (local $7 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 16
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store offset=8
-  local.get $1
-  i32.const 1
-  i32.sub
-  local.tee $5
-  i32.const 0
-  i32.lt_s
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 16
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   i32.const 3456
-   return
-  end
-  local.get $5
-  i32.eqz
-  if
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.load
-   local.tee $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   i32.const 16
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   i32.const 3456
-   local.get $0
-   select
-   return
-  end
-  loop $for-loop|0
-   local.get $1
-   local.get $4
-   i32.gt_s
-   if
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    local.get $4
-    i32.const 2
-    i32.shl
-    i32.add
-    i32.load
-    local.tee $6
-    i32.store offset=4
-    local.get $6
-    if
-     global.get $~lib/memory/__stack_pointer
-     local.get $6
-     i32.store offset=8
-     local.get $3
-     local.get $6
-     i32.const 20
-     i32.sub
-     i32.load offset=16
-     i32.const 1
-     i32.shr_u
-     i32.add
-     local.set $3
-    end
-    local.get $4
-    i32.const 1
-    i32.add
-    local.set $4
-    br $for-loop|0
-   end
-  end
-  i32.const 0
-  local.set $4
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  local.get $2
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const 1
-  i32.shr_u
-  local.tee $1
-  local.get $5
-  i32.mul
-  i32.add
-  i32.const 1
-  i32.shl
-  i32.const 2
-  call $~lib/rt/itcms/__new
-  local.tee $6
-  i32.store offset=12
-  i32.const 0
-  local.set $3
-  loop $for-loop|1
-   local.get $3
-   local.get $5
-   i32.lt_s
-   if
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    local.get $3
-    i32.const 2
-    i32.shl
-    i32.add
-    i32.load
-    local.tee $7
-    i32.store offset=4
-    local.get $7
-    if
-     global.get $~lib/memory/__stack_pointer
-     local.get $7
-     i32.store offset=8
-     local.get $6
-     local.get $4
-     i32.const 1
-     i32.shl
-     i32.add
-     local.get $7
-     local.get $7
-     i32.const 20
-     i32.sub
-     i32.load offset=16
-     i32.const 1
-     i32.shr_u
-     local.tee $7
-     i32.const 1
-     i32.shl
-     memory.copy
-     local.get $4
-     local.get $7
-     i32.add
-     local.set $4
-    end
-    local.get $1
-    if
-     local.get $6
-     local.get $4
-     i32.const 1
-     i32.shl
-     i32.add
-     local.get $2
-     local.get $1
-     i32.const 1
-     i32.shl
-     memory.copy
-     local.get $1
-     local.get $4
-     i32.add
-     local.set $4
-    end
-    local.get $3
-    i32.const 1
-    i32.add
-    local.set $3
-    br $for-loop|1
-   end
-  end
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  local.get $5
-  i32.const 2
-  i32.shl
-  i32.add
-  i32.load
-  local.tee $0
-  i32.store offset=4
-  local.get $0
-  if
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=8
-   local.get $6
-   local.get $4
-   i32.const 1
-   i32.shl
-   i32.add
-   local.get $0
-   local.get $0
-   i32.const 20
-   i32.sub
-   i32.load offset=16
-   i32.const -2
-   i32.and
-   memory.copy
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 16
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $6
- )
- (func $~lib/staticarray/StaticArray<~lib/string/String>#join (param $0 i32) (result i32)
-  (local $1 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  local.get $0
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const 2
-  i32.shr_u
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  i32.const 3456
-  i32.store
-  local.get $0
-  local.get $1
-  i32.const 3456
-  call $~lib/util/string/joinStringArray
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $0
- )
- (func $~lib/console/console.log (param $0 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  local.get $0
-  call $~lib/bindings/dom/console.log
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.add
-  global.set $~lib/memory/__stack_pointer
- )
- (func $~lib/string/String#substring (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
-  (local $3 i32)
-  (local $4 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  local.get $1
-  i32.const 0
-  local.get $1
-  i32.const 0
-  i32.gt_s
-  select
-  local.tee $3
-  local.get $0
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const 1
-  i32.shr_u
-  local.tee $1
-  local.get $1
-  local.get $3
-  i32.gt_s
-  select
-  local.tee $3
-  local.get $2
-  i32.const 0
-  local.get $2
-  i32.const 0
-  i32.gt_s
-  select
-  local.tee $2
-  local.get $1
-  local.get $1
-  local.get $2
-  i32.gt_s
-  select
-  local.tee $2
-  local.get $2
-  local.get $3
-  i32.gt_s
-  select
-  i32.const 1
-  i32.shl
-  local.set $4
-  local.get $3
-  local.get $2
-  local.get $2
-  local.get $3
-  i32.lt_s
-  select
-  i32.const 1
-  i32.shl
-  local.tee $2
-  local.get $4
-  i32.sub
-  local.tee $3
-  i32.eqz
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   i32.const 3456
-   return
-  end
-  local.get $4
-  i32.eqz
-  local.get $2
-  local.get $1
-  i32.const 1
-  i32.shl
-  i32.eq
-  i32.and
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
-   return
-  end
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.const 2
-  call $~lib/rt/itcms/__new
-  local.tee $1
-  i32.store offset=4
-  local.get $1
-  local.get $0
-  local.get $4
-  i32.add
-  local.get $3
-  memory.copy
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $1
  )
  (func $~lib/util/string/strtol<f64> (param $0 i32) (result f64)
   (local $1 i32)
@@ -3751,11 +3147,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -3782,7 +3178,7 @@
    i32.load16_u
    local.set $0
    loop $while-continue|0
-    block $__inlined_func$~lib/util/string/isSpace$99 (result i32)
+    block $__inlined_func$~lib/util/string/isSpace$93 (result i32)
      local.get $0
      i32.const 128
      i32.or
@@ -3797,7 +3193,7 @@
      local.get $0
      i32.const 5760
      i32.lt_u
-     br_if $__inlined_func$~lib/util/string/isSpace$99
+     br_if $__inlined_func$~lib/util/string/isSpace$93
      drop
      i32.const 1
      local.get $0
@@ -3805,7 +3201,7 @@
      i32.add
      i32.const 10
      i32.le_u
-     br_if $__inlined_func$~lib/util/string/isSpace$99
+     br_if $__inlined_func$~lib/util/string/isSpace$93
      drop
      block $break|0
       block $case0|0
@@ -3840,7 +3236,7 @@
        br $break|0
       end
       i32.const 1
-      br $__inlined_func$~lib/util/string/isSpace$99
+      br $__inlined_func$~lib/util/string/isSpace$93
      end
      i32.const 0
     end
@@ -4050,11 +3446,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -4084,11 +3480,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -4112,8 +3508,8 @@
    i32.const 268435455
    i32.gt_u
    if
-    i32.const 3520
-    i32.const 3568
+    i32.const 1568
+    i32.const 1616
     i32.const 19
     i32.const 48
     call $~lib/builtins/abort
@@ -4122,7 +3518,7 @@
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
-   block $__inlined_func$~lib/rt/itcms/__renew$252
+   block $__inlined_func$~lib/rt/itcms/__renew$205
     i32.const 1073741820
     local.get $2
     i32.const 1
@@ -4165,7 +3561,7 @@
      i32.store offset=16
      local.get $2
      local.set $1
-     br $__inlined_func$~lib/rt/itcms/__renew$252
+     br $__inlined_func$~lib/rt/itcms/__renew$205
     end
     local.get $3
     local.get $4
@@ -4215,11 +3611,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -4261,458 +3657,212 @@
   i32.add
   global.set $~lib/memory/__stack_pointer
  )
- (func $~lib/array/Array<i32>#toString (param $0 i32) (result i32)
+ (func $start:assembly/helper~anonymous|0 (param $0 i32) (result i32)
   (local $1 i32)
   (local $2 i32)
   (local $3 i32)
   (local $4 i32)
   (local $5 i32)
   (local $6 i32)
+  (local $7 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 8
+  i32.const 12
   i32.sub
   global.set $~lib/memory/__stack_pointer
-  block $folding-inner1
+  block $folding-inner0
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
-   br_if $folding-inner1
+   br_if $folding-inner0
    global.get $~lib/memory/__stack_pointer
    i64.const 0
    i64.store
    global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3616
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4
-   i32.sub
-   global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 7280
-   i32.lt_s
-   br_if $folding-inner1
+   i32.const 0
+   i32.store offset=8
    global.get $~lib/memory/__stack_pointer
    i32.const 0
+   i32.const 4
+   i32.const 1104
+   call $~lib/rt/__newArray
+   local.tee $3
    i32.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
-   i32.store
+   i32.store offset=4
    local.get $0
-   i32.load offset=4
-   local.set $3
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   local.get $0
-   i32.load offset=12
-   local.set $0
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3616
-   i32.store
-   block $__inlined_func$~lib/util/string/joinIntegerArray<i32>$1 (result i32)
-    global.get $~lib/memory/__stack_pointer
-    i32.const 8
-    i32.sub
-    global.set $~lib/memory/__stack_pointer
-    global.get $~lib/memory/__stack_pointer
-    i32.const 7280
-    i32.lt_s
-    br_if $folding-inner1
-    global.get $~lib/memory/__stack_pointer
-    i64.const 0
-    i64.store
-    local.get $0
-    i32.const 1
-    i32.sub
-    local.tee $0
+   i32.const 20
+   i32.sub
+   i32.load offset=16
+   i32.const 1
+   i32.shr_u
+   local.set $2
+   loop $for-loop|0
+    local.get $2
     i32.const 0
-    i32.lt_s
+    i32.gt_s
     if
-     global.get $~lib/memory/__stack_pointer
-     i32.const 8
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     i32.const 3456
-     br $__inlined_func$~lib/util/string/joinIntegerArray<i32>$1
-    end
-    block $folding-inner00
-     local.get $0
-     i32.eqz
+     local.get $2
+     i32.const 9
+     i32.sub
+     local.tee $1
+     i32.const 0
+     i32.lt_s
      if
-      local.get $3
-      i32.load
-      call $~lib/util/number/itoa32
-      local.set $0
-      br $folding-inner00
+      i32.const 0
+      local.set $1
      end
      global.get $~lib/memory/__stack_pointer
-     i32.const 3616
-     i32.store
+     local.set $4
      global.get $~lib/memory/__stack_pointer
-     i32.const 3612
-     i32.load
+     local.get $0
+     i32.store offset=4
+     global.get $~lib/memory/__stack_pointer
+     i32.const 8
+     i32.sub
+     global.set $~lib/memory/__stack_pointer
+     global.get $~lib/memory/__stack_pointer
+     i32.const 5084
+     i32.lt_s
+     br_if $folding-inner0
+     global.get $~lib/memory/__stack_pointer
+     i64.const 0
+     i64.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $0
+     i32.store
+     local.get $1
+     i32.const 0
+     local.get $1
+     i32.const 0
+     i32.gt_s
+     select
+     local.tee $5
+     local.get $0
+     i32.const 20
+     i32.sub
+     i32.load offset=16
      i32.const 1
      i32.shr_u
-     local.tee $4
-     i32.const 11
-     i32.add
-     local.get $0
-     i32.mul
-     i32.const 11
-     i32.add
+     local.tee $1
+     local.get $1
+     local.get $5
+     i32.gt_s
+     select
      local.tee $5
-     i32.const 1
-     i32.shl
-     i32.const 2
-     call $~lib/rt/itcms/__new
+     local.get $2
+     i32.const 0
+     local.get $2
+     i32.const 0
+     i32.gt_s
+     select
      local.tee $6
-     i32.store offset=4
-     loop $for-loop|0
-      local.get $0
-      local.get $2
-      i32.gt_s
-      if
-       local.get $6
-       local.get $1
-       i32.const 1
-       i32.shl
-       i32.add
-       local.get $3
-       local.get $2
-       i32.const 2
-       i32.shl
-       i32.add
-       i32.load
-       call $~lib/util/number/itoa_buffered<i32>
-       local.get $1
-       i32.add
-       local.set $1
-       local.get $4
-       if
-        local.get $6
-        local.get $1
-        i32.const 1
-        i32.shl
-        i32.add
-        i32.const 3616
-        local.get $4
-        i32.const 1
-        i32.shl
-        memory.copy
-        local.get $1
-        local.get $4
-        i32.add
-        local.set $1
-       end
-       local.get $2
-       i32.const 1
-       i32.add
-       local.set $2
-       br $for-loop|0
-      end
-     end
+     local.get $1
+     local.get $1
+     local.get $6
+     i32.gt_s
+     select
+     local.tee $6
      local.get $5
      local.get $6
-     local.get $1
+     i32.lt_s
+     select
      i32.const 1
      i32.shl
-     i32.add
-     local.get $3
-     local.get $0
-     i32.const 2
-     i32.shl
-     i32.add
-     i32.load
-     call $~lib/util/number/itoa_buffered<i32>
-     local.get $1
-     i32.add
-     local.tee $0
-     i32.gt_s
-     if
+     local.set $7
+     block $__inlined_func$~lib/string/String#substring$230
+      local.get $5
+      local.get $6
+      local.get $5
+      local.get $6
+      i32.gt_s
+      select
+      i32.const 1
+      i32.shl
+      local.tee $5
+      local.get $7
+      i32.sub
+      local.tee $6
+      i32.eqz
+      if
+       global.get $~lib/memory/__stack_pointer
+       i32.const 8
+       i32.add
+       global.set $~lib/memory/__stack_pointer
+       i32.const 1536
+       local.set $1
+       br $__inlined_func$~lib/string/String#substring$230
+      end
+      local.get $7
+      i32.eqz
+      local.get $5
+      local.get $1
+      i32.const 1
+      i32.shl
+      i32.eq
+      i32.and
+      if
+       global.get $~lib/memory/__stack_pointer
+       i32.const 8
+       i32.add
+       global.set $~lib/memory/__stack_pointer
+       local.get $0
+       local.set $1
+       br $__inlined_func$~lib/string/String#substring$230
+      end
       global.get $~lib/memory/__stack_pointer
       local.get $6
-      i32.store
-      local.get $6
-      i32.const 0
+      i32.const 2
+      call $~lib/rt/itcms/__new
+      local.tee $1
+      i32.store offset=4
+      local.get $1
       local.get $0
-      call $~lib/string/String#substring
-      local.set $0
-      br $folding-inner00
+      local.get $7
+      i32.add
+      local.get $6
+      memory.copy
+      global.get $~lib/memory/__stack_pointer
+      i32.const 8
+      i32.add
+      global.set $~lib/memory/__stack_pointer
      end
+     local.get $4
+     local.get $1
+     i32.store offset=8
      global.get $~lib/memory/__stack_pointer
-     i32.const 8
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     local.get $6
-     br $__inlined_func$~lib/util/string/joinIntegerArray<i32>$1
+     local.get $1
+     i32.store offset=4
+     local.get $1
+     call $~lib/string/parseInt
+     i32.trunc_sat_f64_s
+     local.set $1
+     global.get $~lib/memory/__stack_pointer
+     local.get $3
+     i32.store offset=4
+     local.get $3
+     local.get $1
+     call $~lib/array/Array<i32>#push
+     local.get $2
+     i32.const 9
+     i32.sub
+     local.set $2
+     br $for-loop|0
     end
-    global.get $~lib/memory/__stack_pointer
-    i32.const 8
-    i32.add
-    global.set $~lib/memory/__stack_pointer
-    local.get $0
    end
-   local.set $0
    global.get $~lib/memory/__stack_pointer
-   i32.const 4
+   i32.const 12
    i32.add
    global.set $~lib/memory/__stack_pointer
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   local.get $0
+   local.get $3
    return
   end
-  i32.const 40080
-  i32.const 40128
+  i32.const 37872
+  i32.const 37920
   i32.const 1
   i32.const 1
   call $~lib/builtins/abort
   unreachable
- )
- (func $~lib/string/String#concat (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i64.const 0
-  i64.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  local.get $0
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const -2
-  i32.and
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  local.get $1
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const -2
-  i32.and
-  local.tee $3
-  local.get $2
-  i32.add
-  local.tee $4
-  i32.eqz
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 8
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   i32.const 3456
-   return
-  end
-  global.get $~lib/memory/__stack_pointer
-  local.get $4
-  i32.const 2
-  call $~lib/rt/itcms/__new
-  local.tee $4
-  i32.store offset=4
-  local.get $4
-  local.get $0
-  local.get $2
-  memory.copy
-  local.get $2
-  local.get $4
-  i32.add
-  local.get $1
-  local.get $3
-  memory.copy
-  global.get $~lib/memory/__stack_pointer
-  i32.const 8
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $4
- )
- (func $start:assembly/helper~anonymous|0 (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 32
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 32
-  memory.fill
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=4
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const 1
-  i32.shr_u
-  call $~lib/util/number/itoa32
-  local.tee $1
-  i32.store offset=12
-  global.get $~lib/memory/__stack_pointer
-  i32.const 1232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=16
-  i32.const 1236
-  local.get $0
-  i32.store
-  i32.const 1232
-  local.get $0
-  i32.const 1
-  call $~lib/rt/itcms/__link
-  global.get $~lib/memory/__stack_pointer
-  i32.const 1232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  i32.const 1244
-  local.get $1
-  i32.store
-  i32.const 1232
-  local.get $1
-  i32.const 1
-  call $~lib/rt/itcms/__link
-  global.get $~lib/memory/__stack_pointer
-  i32.const 1232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 3456
-  i32.store offset=16
-  i32.const 1232
-  call $~lib/staticarray/StaticArray<~lib/string/String>#join
-  local.set $1
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store
-  local.get $1
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.const 4
-  i32.const 3488
-  call $~lib/rt/__newArray
-  local.tee $3
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  local.get $0
-  i32.const 20
-  i32.sub
-  i32.load offset=16
-  i32.const 1
-  i32.shr_u
-  local.set $1
-  loop $for-loop|0
-   local.get $1
-   i32.const 0
-   i32.gt_s
-   if
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    i32.store
-    global.get $~lib/memory/__stack_pointer
-    local.get $0
-    local.get $1
-    i32.const 9
-    i32.sub
-    local.tee $2
-    i32.const 0
-    local.get $2
-    i32.const 0
-    i32.ge_s
-    select
-    local.get $1
-    call $~lib/string/String#substring
-    local.tee $1
-    i32.store offset=24
-    global.get $~lib/memory/__stack_pointer
-    local.get $1
-    i32.store
-    local.get $1
-    call $~lib/string/parseInt
-    i32.trunc_sat_f64_s
-    local.set $1
-    global.get $~lib/memory/__stack_pointer
-    local.get $3
-    i32.store
-    local.get $3
-    local.get $1
-    call $~lib/array/Array<i32>#push
-    local.get $2
-    local.set $1
-    br $for-loop|0
-   end
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 3648
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store offset=28
-  local.get $3
-  call $~lib/array/Array<i32>#toString
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=16
-  i32.const 3648
-  local.get $0
-  call $~lib/string/String#concat
-  local.set $0
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  local.get $0
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
-  i32.const 32
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $3
  )
  (func $~lib/array/Array<i32>#get:length (param $0 i32) (result i32)
   global.get $~lib/memory/__stack_pointer
@@ -4720,11 +3870,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -4751,11 +3901,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -4772,8 +3922,8 @@
   i32.load offset=12
   i32.ge_u
   if
-   i32.const 1696
-   i32.const 3568
+   i32.const 1328
+   i32.const 1616
    i32.const 114
    i32.const 42
    call $~lib/builtins/abort
@@ -4798,100 +3948,53 @@
  )
  (func $start:assembly/helper~anonymous|1 (param $0 i32) (param $1 i32) (result i32)
   (local $2 i32)
-  (local $3 i64)
+  (local $3 i32)
   (local $4 i32)
-  (local $5 f64)
-  (local $6 i32)
-  (local $7 i32)
+  (local $5 i64)
+  (local $6 f64)
+  (local $7 i64)
   (local $8 i32)
   (local $9 i32)
   (local $10 i32)
-  (local $11 i64)
+  (local $11 i32)
+  (local $12 i64)
   global.get $~lib/memory/__stack_pointer
-  i32.const 28
+  i32.const 8
   i32.sub
   global.set $~lib/memory/__stack_pointer
   block $folding-inner1
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
    br_if $folding-inner1
    global.get $~lib/memory/__stack_pointer
-   i32.const 0
-   i32.const 28
-   memory.fill
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3744
-   i32.store
-   i32.const 3744
-   call $~lib/console/console.log
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3808
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=12
-   local.get $0
-   call $~lib/array/Array<i32>#toString
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=8
-   i32.const 3808
-   local.get $6
-   call $~lib/string/String#concat
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $~lib/console/console.log
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3856
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=12
-   local.get $1
-   call $~lib/array/Array<i32>#toString
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store offset=8
-   i32.const 3856
-   local.get $6
-   call $~lib/string/String#concat
-   local.set $6
-   global.get $~lib/memory/__stack_pointer
-   local.get $6
-   i32.store
-   local.get $6
-   call $~lib/console/console.log
+   i64.const 0
+   i64.store
    global.get $~lib/memory/__stack_pointer
    local.get $0
    i32.store
    local.get $0
    call $~lib/array/Array<i32>#get:length
    f64.convert_i32_s
-   local.set $5
+   local.set $6
    global.get $~lib/memory/__stack_pointer
    local.get $1
    i32.store
-   local.get $5
+   local.get $6
    local.get $1
    call $~lib/array/Array<i32>#get:length
    f64.convert_i32_s
    f64.max
    i32.trunc_sat_f64_s
-   local.set $6
+   local.set $3
    global.get $~lib/memory/__stack_pointer
-   local.set $7
+   local.set $8
    global.get $~lib/memory/__stack_pointer
    i32.const 16
    i32.sub
    global.set $~lib/memory/__stack_pointer
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
    br_if $folding-inner1
    global.get $~lib/memory/__stack_pointer
@@ -4904,42 +4007,42 @@
    i32.const 16
    i32.const 4
    call $~lib/rt/itcms/__new
-   local.tee $8
+   local.tee $9
    i32.store
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
+   local.get $9
    i32.const 0
    i32.store
-   local.get $8
+   local.get $9
    i32.const 0
    i32.const 0
    call $~lib/rt/itcms/__link
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
+   local.get $9
    i32.const 0
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
+   local.get $9
    i32.const 0
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
+   local.get $9
    i32.const 0
    i32.store offset=12
-   local.get $6
+   local.get $3
    i32.const 268435455
    i32.gt_u
    if
-    i32.const 3520
-    i32.const 3568
+    i32.const 1568
+    i32.const 1616
     i32.const 70
     i32.const 60
     call $~lib/builtins/abort
@@ -4947,114 +4050,114 @@
    end
    global.get $~lib/memory/__stack_pointer
    i32.const 8
-   local.get $6
-   local.get $6
+   local.get $3
+   local.get $3
    i32.const 8
    i32.le_u
    select
    i32.const 2
    i32.shl
-   local.tee $9
+   local.tee $10
    i32.const 1
    call $~lib/rt/itcms/__new
-   local.tee $10
+   local.tee $11
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   local.get $10
+   local.get $11
    i32.store offset=12
-   local.get $8
-   local.get $10
+   local.get $9
+   local.get $11
    i32.store
-   local.get $8
-   local.get $10
+   local.get $9
+   local.get $11
    i32.const 0
    call $~lib/rt/itcms/__link
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
-   local.get $10
+   local.get $9
+   local.get $11
    i32.store offset=4
    global.get $~lib/memory/__stack_pointer
-   local.get $8
-   i32.store offset=4
-   local.get $8
    local.get $9
+   i32.store offset=4
+   local.get $9
+   local.get $10
    i32.store offset=8
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store offset=4
-   local.get $8
-   local.get $6
+   local.get $9
+   local.get $3
    i32.store offset=12
    global.get $~lib/memory/__stack_pointer
    i32.const 16
    i32.add
    global.set $~lib/memory/__stack_pointer
    global.get $~lib/memory/__stack_pointer
-   local.get $8
+   local.get $9
    i32.store
-   local.get $7
-   block $__inlined_func$~lib/array/Array<i32>#fill@varargs$5 (result i32)
+   local.get $8
+   block $__inlined_func$~lib/array/Array<i32>#fill@varargs$2 (result i32)
     global.get $~lib/memory/__stack_pointer
     i32.const 4
     i32.sub
     global.set $~lib/memory/__stack_pointer
     block $folding-inner00
      global.get $~lib/memory/__stack_pointer
-     i32.const 7280
+     i32.const 5084
      i32.lt_s
      br_if $folding-inner00
      global.get $~lib/memory/__stack_pointer
      i32.const 0
      i32.store
      global.get $~lib/memory/__stack_pointer
-     local.get $8
+     local.get $9
      i32.store
      global.get $~lib/memory/__stack_pointer
      i32.const 4
      i32.sub
      global.set $~lib/memory/__stack_pointer
      global.get $~lib/memory/__stack_pointer
-     i32.const 7280
+     i32.const 5084
      i32.lt_s
      br_if $folding-inner00
      global.get $~lib/memory/__stack_pointer
      i32.const 0
      i32.store
      global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     i32.load offset=4
-     local.set $7
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     i32.load offset=12
-     local.tee $9
-     i32.const 0
      local.get $9
+     i32.store
+     local.get $9
+     i32.load offset=4
+     local.set $8
+     global.get $~lib/memory/__stack_pointer
+     local.get $9
+     i32.store
+     local.get $9
+     i32.load offset=12
+     local.tee $10
+     i32.const 0
+     local.get $10
      i32.const 0
      i32.le_s
      select
+     local.tee $11
+     local.get $10
      local.tee $10
-     local.get $9
-     local.tee $9
      i32.lt_s
      if
-      local.get $7
-      local.get $10
+      local.get $8
+      local.get $11
       i32.const 2
       i32.shl
       i32.add
       i32.const 0
-      local.get $9
       local.get $10
+      local.get $11
       i32.sub
       i32.const 2
       i32.shl
@@ -5068,215 +4171,88 @@
      i32.const 4
      i32.add
      global.set $~lib/memory/__stack_pointer
-     local.get $8
-     br $__inlined_func$~lib/array/Array<i32>#fill@varargs$5
+     local.get $9
+     br $__inlined_func$~lib/array/Array<i32>#fill@varargs$2
     end
     br $folding-inner1
    end
-   local.tee $7
-   i32.store offset=16
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3904
+   local.tee $8
    i32.store offset=4
-   local.get $6
-   call $~lib/util/number/itoa32
-   local.set $8
-   global.get $~lib/memory/__stack_pointer
-   local.get $8
-   i32.store offset=8
-   i32.const 3904
-   local.get $8
-   call $~lib/string/String#concat
-   local.set $8
-   global.get $~lib/memory/__stack_pointer
-   local.get $8
-   i32.store
-   local.get $8
-   call $~lib/console/console.log
    loop $for-loop|0
     local.get $2
-    local.get $6
+    local.get $3
     i32.lt_s
     if
      global.get $~lib/memory/__stack_pointer
-     i32.const 3952
-     i32.store offset=4
-     local.get $2
-     call $~lib/util/number/itoa32
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 3952
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4000
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store offset=12
-     local.get $0
-     call $~lib/array/Array<i32>#get:length
-     call $~lib/util/number/itoa32
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4000
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
      local.get $0
      i32.store
-     local.get $0
-     call $~lib/array/Array<i32>#get:length
-     local.get $2
-     i32.le_s
-     if (result i64)
-      i64.const 0
-     else
-      global.get $~lib/memory/__stack_pointer
-      local.get $0
-      i32.store
-      local.get $0
-      local.get $2
-      call $~lib/array/Array<i32>#__get
-      i64.extend_i32_s
-     end
-     local.set $3
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4064
-     i32.store offset=4
-     local.get $3
-     call $~lib/util/number/itoa64
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4064
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4112
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=12
-     local.get $1
-     call $~lib/array/Array<i32>#get:length
-     call $~lib/util/number/itoa32
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4112
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store
-     local.get $1
-     call $~lib/array/Array<i32>#get:length
-     local.get $2
-     i32.le_s
-     if (result i64)
-      i64.const 0
-     else
-      global.get $~lib/memory/__stack_pointer
-      local.get $1
-      i32.store
-      local.get $1
-      local.get $2
-      call $~lib/array/Array<i32>#__get
-      i64.extend_i32_s
-     end
-     local.set $11
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4176
-     i32.store offset=4
-     local.get $11
-     call $~lib/util/number/itoa64
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4176
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4224
-     i32.store offset=4
      local.get $4
      i64.extend_i32_s
-     local.get $3
-     local.get $11
-     i64.add
-     i64.add
-     local.tee $3
-     call $~lib/util/number/itoa64
-     local.set $4
+     local.set $12
+     local.get $0
+     call $~lib/array/Array<i32>#get:length
+     local.get $2
+     i32.le_s
+     if (result i64)
+      i64.const 0
+     else
+      global.get $~lib/memory/__stack_pointer
+      local.get $0
+      i32.store
+      local.get $0
+      local.get $2
+      call $~lib/array/Array<i32>#__get
+      i64.extend_i32_s
+     end
+     local.set $7
      global.get $~lib/memory/__stack_pointer
-     local.get $4
-     i32.store offset=8
-     i32.const 4224
-     local.get $4
-     call $~lib/string/String#concat
-     local.set $4
-     global.get $~lib/memory/__stack_pointer
-     local.get $4
+     local.get $1
      i32.store
-     local.get $4
-     call $~lib/console/console.log
+     local.get $1
+     call $~lib/array/Array<i32>#get:length
+     local.get $2
+     i32.le_s
+     if (result i64)
+      i64.const 0
+     else
+      global.get $~lib/memory/__stack_pointer
+      local.get $1
+      i32.store
+      local.get $1
+      local.get $2
+      call $~lib/array/Array<i32>#__get
+      i64.extend_i32_s
+     end
+     local.set $5
      global.get $~lib/memory/__stack_pointer
+     local.get $8
+     i32.store
+     local.get $12
+     local.get $5
      local.get $7
-     i32.store
+     i64.add
+     i64.add
+     local.tee $5
+     i64.const 1000000000
+     i64.rem_s
+     i32.wrap_i64
+     local.set $4
      global.get $~lib/memory/__stack_pointer
      i32.const 4
      i32.sub
      global.set $~lib/memory/__stack_pointer
      global.get $~lib/memory/__stack_pointer
-     i32.const 7280
+     i32.const 5084
      i32.lt_s
      br_if $folding-inner1
      global.get $~lib/memory/__stack_pointer
      i32.const 0
      i32.store
      global.get $~lib/memory/__stack_pointer
-     local.get $7
+     local.get $8
      i32.store
      local.get $2
-     local.get $7
+     local.get $8
      i32.load offset=12
      i32.ge_u
      if
@@ -5284,120 +4260,46 @@
       i32.const 0
       i32.lt_s
       if
-       i32.const 1696
-       i32.const 3568
+       i32.const 1328
+       i32.const 1616
        i32.const 130
        i32.const 22
        call $~lib/builtins/abort
        unreachable
       end
-      local.get $7
+      local.get $8
       local.get $2
       i32.const 1
       i32.add
-      local.tee $4
+      local.tee $9
       call $~lib/array/ensureCapacity
       global.get $~lib/memory/__stack_pointer
-      local.get $7
+      local.get $8
       i32.store
-      local.get $7
-      local.get $4
+      local.get $8
+      local.get $9
       i32.store offset=12
      end
      global.get $~lib/memory/__stack_pointer
-     local.get $7
+     local.get $8
      i32.store
-     local.get $7
+     local.get $8
      i32.load offset=4
      local.get $2
      i32.const 2
      i32.shl
      i32.add
-     local.get $3
-     i64.const 1000000000
-     i64.rem_s
-     i64.store32
+     local.get $4
+     i32.store
      global.get $~lib/memory/__stack_pointer
      i32.const 4
      i32.add
      global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     call $~lib/util/number/itoa32
-     local.tee $4
-     i32.store offset=20
-     global.get $~lib/memory/__stack_pointer
-     local.get $7
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $7
-     local.get $2
-     call $~lib/array/Array<i32>#__get
-     call $~lib/util/number/itoa32
-     local.tee $8
-     i32.store offset=24
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4352
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $4
-     i32.store offset=8
-     i32.const 4356
-     local.get $4
-     i32.store
-     i32.const 4352
-     local.get $4
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4352
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4364
-     local.get $8
-     i32.store
-     i32.const 4352
-     local.get $8
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4352
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3456
-     i32.store offset=8
-     i32.const 4352
-     call $~lib/staticarray/StaticArray<~lib/string/String>#join
-     local.set $4
-     global.get $~lib/memory/__stack_pointer
-     local.get $4
-     i32.store
-     local.get $4
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4400
-     i32.store offset=4
-     local.get $3
+     local.get $5
      i64.const 1000000000
      i64.div_s
      i32.wrap_i64
-     local.tee $4
-     call $~lib/util/number/itoa32
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store offset=8
-     i32.const 4400
-     local.get $8
-     call $~lib/string/String#concat
-     local.set $8
-     global.get $~lib/memory/__stack_pointer
-     local.get $8
-     i32.store
-     local.get $8
-     call $~lib/console/console.log
+     local.set $4
      local.get $2
      i32.const 1
      i32.add
@@ -5410,42 +4312,21 @@
    i32.gt_s
    if
     global.get $~lib/memory/__stack_pointer
-    local.get $7
+    local.get $8
     i32.store
-    local.get $7
+    local.get $8
     local.get $4
     call $~lib/array/Array<i32>#push
    end
    global.get $~lib/memory/__stack_pointer
-   i32.const 3648
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $7
-   i32.store offset=12
-   local.get $7
-   call $~lib/array/Array<i32>#toString
-   local.set $0
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=8
-   i32.const 3648
-   local.get $0
-   call $~lib/string/String#concat
-   local.set $0
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store
-   local.get $0
-   call $~lib/console/console.log
-   global.get $~lib/memory/__stack_pointer
-   i32.const 28
+   i32.const 8
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $7
+   local.get $8
    return
   end
-  i32.const 40080
-  i32.const 40128
+  i32.const 37872
+  i32.const 37920
   i32.const 1
   i32.const 1
   call $~lib/builtins/abort
@@ -5465,221 +4346,180 @@
   (local $11 i32)
   (local $12 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 40
+  i32.const 24
   i32.sub
   global.set $~lib/memory/__stack_pointer
-  block $folding-inner0
+  block $folding-inner1
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
-   br_if $folding-inner0
+   br_if $folding-inner1
    global.get $~lib/memory/__stack_pointer
    i32.const 0
-   i32.const 40
+   i32.const 24
    memory.fill
    global.get $~lib/memory/__stack_pointer
    local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $~lib/array/Array<i32>#toString
-   local.tee $1
-   i32.store offset=8
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   call $~lib/array/Array<i32>#get:length
-   call $~lib/util/number/itoa32
-   local.tee $2
-   i32.store offset=12
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4576
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=16
-   i32.const 4580
-   local.get $1
-   i32.store
-   i32.const 4576
-   local.get $1
-   i32.const 1
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4576
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   local.get $2
-   i32.store offset=16
-   i32.const 4588
-   local.get $2
-   i32.store
-   i32.const 4576
-   local.get $2
-   i32.const 1
-   call $~lib/rt/itcms/__link
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4576
-   i32.store offset=4
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3456
-   i32.store offset=16
-   i32.const 4576
-   call $~lib/staticarray/StaticArray<~lib/string/String>#join
-   local.set $1
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   local.get $1
-   call $~lib/console/console.log
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
    i32.store
    local.get $0
    call $~lib/array/Array<i32>#get:length
-   local.set $7
+   local.set $6
+   i32.const 1536
+   local.set $2
    global.get $~lib/memory/__stack_pointer
-   i32.const 3904
+   i32.const 1536
    i32.store offset=4
-   local.get $7
-   call $~lib/util/number/itoa32
-   local.set $1
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store offset=16
-   i32.const 3904
-   local.get $1
-   call $~lib/string/String#concat
-   local.set $1
-   global.get $~lib/memory/__stack_pointer
-   local.get $1
-   i32.store
-   local.get $1
-   call $~lib/console/console.log
-   i32.const 3456
-   local.set $12
-   global.get $~lib/memory/__stack_pointer
-   i32.const 3456
-   i32.store offset=20
-   local.get $7
+   local.get $6
    i32.const 1
    i32.sub
-   local.set $11
+   local.set $4
    loop $for-loop|0
-    local.get $11
+    local.get $4
     i32.const 0
     i32.ge_s
     if
      global.get $~lib/memory/__stack_pointer
-     i32.const 4624
-     i32.store offset=4
-     local.get $11
-     call $~lib/util/number/itoa32
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=16
-     i32.const 4624
-     local.get $1
-     call $~lib/string/String#concat
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
+     local.get $0
      i32.store
-     local.get $1
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     local.get $11
-     call $~lib/util/number/itoa32
-     local.tee $1
-     i32.store offset=24
      global.get $~lib/memory/__stack_pointer
      local.get $0
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     local.get $11
+     local.get $4
      call $~lib/array/Array<i32>#__get
-     call $~lib/util/number/itoa32
-     local.tee $2
-     i32.store offset=28
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4768
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=16
-     i32.const 4772
-     local.get $1
-     i32.store
-     i32.const 4768
-     local.get $1
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4768
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     i32.store offset=16
-     i32.const 4780
-     local.get $2
-     i32.store
-     i32.const 4768
-     local.get $2
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4768
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3456
-     i32.store offset=16
-     i32.const 4768
-     call $~lib/staticarray/StaticArray<~lib/string/String>#join
      local.set $1
      global.get $~lib/memory/__stack_pointer
+     i32.const 4
+     i32.sub
+     global.set $~lib/memory/__stack_pointer
+     global.get $~lib/memory/__stack_pointer
+     i32.const 5084
+     i32.lt_s
+     br_if $folding-inner1
+     global.get $~lib/memory/__stack_pointer
+     i32.const 0
+     i32.store
+     block $__inlined_func$~lib/util/number/itoa32$78
+      local.get $1
+      i32.eqz
+      if
+       global.get $~lib/memory/__stack_pointer
+       i32.const 4
+       i32.add
+       global.set $~lib/memory/__stack_pointer
+       i32.const 1920
+       local.set $1
+       br $__inlined_func$~lib/util/number/itoa32$78
+      end
+      global.get $~lib/memory/__stack_pointer
+      i32.const 0
+      local.get $1
+      i32.sub
+      local.get $1
+      local.get $1
+      i32.const 31
+      i32.shr_u
+      i32.const 1
+      i32.shl
+      local.tee $3
+      select
+      local.tee $5
+      i32.const 100000
+      i32.lt_u
+      if (result i32)
+       local.get $5
+       i32.const 100
+       i32.lt_u
+       if (result i32)
+        local.get $5
+        i32.const 10
+        i32.ge_u
+        i32.const 1
+        i32.add
+       else
+        local.get $5
+        i32.const 10000
+        i32.ge_u
+        i32.const 3
+        i32.add
+        local.get $5
+        i32.const 1000
+        i32.ge_u
+        i32.add
+       end
+      else
+       local.get $5
+       i32.const 10000000
+       i32.lt_u
+       if (result i32)
+        local.get $5
+        i32.const 1000000
+        i32.ge_u
+        i32.const 6
+        i32.add
+       else
+        local.get $5
+        i32.const 1000000000
+        i32.ge_u
+        i32.const 8
+        i32.add
+        local.get $5
+        i32.const 100000000
+        i32.ge_u
+        i32.add
+       end
+      end
+      local.tee $7
+      i32.const 1
+      i32.shl
+      local.get $3
+      i32.add
+      i32.const 2
+      call $~lib/rt/itcms/__new
+      local.tee $1
+      i32.store
+      local.get $1
+      local.get $3
+      i32.add
+      local.get $5
+      local.get $7
+      call $~lib/util/number/utoa32_dec_lut
+      local.get $3
+      if
+       local.get $1
+       i32.const 45
+       i32.store16
+      end
+      global.get $~lib/memory/__stack_pointer
+      i32.const 4
+      i32.add
+      global.set $~lib/memory/__stack_pointer
+     end
      local.get $1
+     i32.store offset=8
+     global.get $~lib/memory/__stack_pointer
+     local.set $11
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
      i32.store
-     local.get $1
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $0
-     local.get $11
-     call $~lib/array/Array<i32>#__get
-     call $~lib/util/number/itoa32
-     local.tee $1
-     i32.store offset=32
-     global.get $~lib/memory/__stack_pointer
-     local.set $4
-     global.get $~lib/memory/__stack_pointer
-     local.get $12
-     i32.store
-     local.get $7
+     local.get $6
      i32.const 1
      i32.sub
-     local.get $11
+     local.get $4
      i32.ne
      if
       global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=16
       global.get $~lib/memory/__stack_pointer
-      i32.const 1472
-      i32.store offset=36
+      i32.const 1920
+      i32.store offset=20
       global.get $~lib/memory/__stack_pointer
       i32.const 8
       i32.sub
       global.set $~lib/memory/__stack_pointer
       global.get $~lib/memory/__stack_pointer
-      i32.const 7280
+      i32.const 5084
       i32.lt_s
-      br_if $folding-inner0
+      br_if $folding-inner1
       global.get $~lib/memory/__stack_pointer
       i64.const 0
       i64.store
@@ -5692,24 +4532,24 @@
       i32.load offset=16
       i32.const -2
       i32.and
-      local.set $6
+      local.set $12
       global.get $~lib/memory/__stack_pointer
-      i32.const 1472
+      i32.const 1920
       i32.store
-      i32.const 1468
+      i32.const 1916
       i32.load
       i32.const -2
       i32.and
-      local.tee $10
+      local.tee $8
       i32.eqz
-      local.get $6
+      local.get $12
       i32.const 18
       i32.gt_u
       i32.or
       i32.eqz
       if
        local.get $1
-       local.set $2
+       local.set $3
        global.get $~lib/memory/__stack_pointer
        i32.const 18
        i32.const 2
@@ -5717,60 +4557,60 @@
        local.tee $1
        i32.store offset=4
        i32.const 18
-       local.get $6
+       local.get $12
        i32.sub
        local.tee $9
-       local.get $10
+       local.get $8
        i32.gt_u
        if
         local.get $9
         local.get $9
         i32.const 2
         i32.sub
-        local.get $10
+        local.get $8
         i32.div_u
-        local.get $10
+        local.get $8
         i32.mul
-        local.tee $5
+        local.tee $10
         i32.sub
-        local.set $3
+        local.set $7
         i32.const 0
-        local.set $8
+        local.set $5
         loop $while-continue|0
          local.get $5
-         local.get $8
-         i32.gt_u
+         local.get $10
+         i32.lt_u
          if
           local.get $1
-          local.get $8
+          local.get $5
           i32.add
-          i32.const 1472
-          local.get $10
+          i32.const 1920
+          local.get $8
           memory.copy
+          local.get $5
           local.get $8
-          local.get $10
           i32.add
-          local.set $8
+          local.set $5
           br $while-continue|0
          end
         end
         local.get $1
-        local.get $5
+        local.get $10
         i32.add
-        i32.const 1472
-        local.get $3
+        i32.const 1920
+        local.get $7
         memory.copy
        else
         local.get $1
-        i32.const 1472
+        i32.const 1920
         local.get $9
         memory.copy
        end
        local.get $1
        local.get $9
        i32.add
-       local.get $2
-       local.get $6
+       local.get $3
+       local.get $12
        memory.copy
       end
       global.get $~lib/memory/__stack_pointer
@@ -5780,84 +4620,130 @@
      end
      global.get $~lib/memory/__stack_pointer
      local.get $1
-     i32.store offset=4
+     i32.store offset=12
      global.get $~lib/memory/__stack_pointer
      i32.const 8
      i32.sub
      global.set $~lib/memory/__stack_pointer
      global.get $~lib/memory/__stack_pointer
-     i32.const 7280
+     i32.const 5084
      i32.lt_s
-     br_if $folding-inner0
+     br_if $folding-inner1
      global.get $~lib/memory/__stack_pointer
      i64.const 0
      i64.store
      global.get $~lib/memory/__stack_pointer
-     local.get $12
+     local.get $2
      i32.store
      global.get $~lib/memory/__stack_pointer
      local.get $1
      i32.store offset=4
-     local.get $12
+     global.get $~lib/memory/__stack_pointer
+     i32.const 8
+     i32.sub
+     global.set $~lib/memory/__stack_pointer
+     global.get $~lib/memory/__stack_pointer
+     i32.const 5084
+     i32.lt_s
+     br_if $folding-inner1
+     global.get $~lib/memory/__stack_pointer
+     i64.const 0
+     i64.store
+     global.get $~lib/memory/__stack_pointer
+     local.get $2
+     local.tee $3
+     i32.store
+     local.get $2
+     i32.const 20
+     i32.sub
+     i32.load offset=16
+     i32.const -2
+     i32.and
+     local.set $5
+     global.get $~lib/memory/__stack_pointer
      local.get $1
-     call $~lib/string/String#concat
-     local.set $12
+     i32.store
+     block $__inlined_func$~lib/string/String#concat$232
+      local.get $1
+      i32.const 20
+      i32.sub
+      i32.load offset=16
+      i32.const -2
+      i32.and
+      local.tee $7
+      local.get $5
+      i32.add
+      local.tee $2
+      i32.eqz
+      if
+       global.get $~lib/memory/__stack_pointer
+       i32.const 8
+       i32.add
+       global.set $~lib/memory/__stack_pointer
+       i32.const 1536
+       local.set $2
+       br $__inlined_func$~lib/string/String#concat$232
+      end
+      global.get $~lib/memory/__stack_pointer
+      local.get $2
+      i32.const 2
+      call $~lib/rt/itcms/__new
+      local.tee $2
+      i32.store offset=4
+      local.get $2
+      local.get $3
+      local.get $5
+      memory.copy
+      local.get $2
+      local.get $5
+      i32.add
+      local.get $1
+      local.get $7
+      memory.copy
+      global.get $~lib/memory/__stack_pointer
+      i32.const 8
+      i32.add
+      global.set $~lib/memory/__stack_pointer
+     end
      global.get $~lib/memory/__stack_pointer
      i32.const 8
      i32.add
      global.set $~lib/memory/__stack_pointer
-     local.get $4
-     local.get $12
-     i32.store offset=20
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4816
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     local.get $12
-     i32.store offset=16
-     i32.const 4816
-     local.get $12
-     call $~lib/string/String#concat
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store
-     local.get $1
-     call $~lib/console/console.log
      local.get $11
+     local.get $2
+     i32.store offset=4
+     local.get $4
      i32.const 1
      i32.sub
-     local.set $11
+     local.set $4
      br $for-loop|0
     end
    end
    global.get $~lib/memory/__stack_pointer
-   i32.const 40
+   i32.const 24
    i32.add
    global.set $~lib/memory/__stack_pointer
-   local.get $12
+   local.get $2
    return
   end
-  i32.const 40080
-  i32.const 40128
+  i32.const 37872
+  i32.const 37920
   i32.const 1
   i32.const 1
   call $~lib/builtins/abort
   unreachable
  )
  (func $start:assembly/helper~anonymous|3 (param $0 i32) (param $1 i32) (result i32)
-  (local $2 i32)
-  (local $3 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 40
+  i32.const 20
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -5865,176 +4751,52 @@
   end
   global.get $~lib/memory/__stack_pointer
   i32.const 0
-  i32.const 40
+  i32.const 20
   memory.fill
   global.get $~lib/memory/__stack_pointer
-  i32.const 4912
-  i32.store
-  i32.const 4912
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
   global.get $~lib/memory/__stack_pointer
   local.get $0
-  i32.const 3712
+  i32.const 1664
   i32.load
   call_indirect (type $1)
   local.tee $0
   i32.store offset=4
   global.get $~lib/memory/__stack_pointer
-  i32.const 4992
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=16
-  local.get $0
-  call $~lib/array/Array<i32>#toString
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=12
-  i32.const 4992
-  local.get $2
-  call $~lib/string/String#concat
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
   local.get $1
   i32.store
   global.get $~lib/memory/__stack_pointer
   local.get $1
-  i32.const 3712
+  i32.const 1664
   i32.load
   call_indirect (type $1)
   local.tee $1
-  i32.store offset=20
-  global.get $~lib/memory/__stack_pointer
-  i32.const 5056
   i32.store offset=8
   global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=16
-  local.get $1
-  call $~lib/array/Array<i32>#toString
-  local.set $2
+  local.get $0
+  i32.store
   global.get $~lib/memory/__stack_pointer
-  local.get $2
+  local.get $1
   i32.store offset=12
-  i32.const 5056
-  local.get $2
-  call $~lib/string/String#concat
-  local.set $2
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=8
   global.get $~lib/memory/__stack_pointer
   local.get $0
   local.get $1
-  i32.const 4448
+  i32.const 1696
   i32.load
   call_indirect (type $0)
-  local.tee $2
-  i32.store offset=24
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  call $~lib/array/Array<i32>#toString
   local.tee $0
-  i32.store offset=28
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  call $~lib/array/Array<i32>#toString
-  local.tee $1
-  i32.store offset=32
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  call $~lib/array/Array<i32>#toString
-  local.tee $3
-  i32.store offset=36
-  global.get $~lib/memory/__stack_pointer
-  i32.const 5232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $0
-  i32.store offset=12
-  i32.const 5236
-  local.get $0
-  i32.store
-  i32.const 5232
-  local.get $0
-  i32.const 1
-  call $~lib/rt/itcms/__link
-  global.get $~lib/memory/__stack_pointer
-  i32.const 5232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $1
-  i32.store offset=12
-  i32.const 5244
-  local.get $1
-  i32.store
-  i32.const 5232
-  local.get $1
-  i32.const 1
-  call $~lib/rt/itcms/__link
-  global.get $~lib/memory/__stack_pointer
-  i32.const 5232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  local.get $3
-  i32.store offset=12
-  i32.const 5252
-  local.get $3
-  i32.store
-  i32.const 5232
-  local.get $3
-  i32.const 1
-  call $~lib/rt/itcms/__link
-  global.get $~lib/memory/__stack_pointer
-  i32.const 5232
-  i32.store offset=8
-  global.get $~lib/memory/__stack_pointer
-  i32.const 3456
-  i32.store offset=12
-  i32.const 5232
-  call $~lib/staticarray/StaticArray<~lib/string/String>#join
-  local.set $0
+  i32.store offset=16
   global.get $~lib/memory/__stack_pointer
   local.get $0
   i32.store
   local.get $0
-  call $~lib/console/console.log
-  global.get $~lib/memory/__stack_pointer
-  local.get $2
-  i32.store
-  local.get $2
-  i32.const 4880
+  i32.const 3504
   i32.load
   call_indirect (type $1)
   local.set $0
   global.get $~lib/memory/__stack_pointer
-  i32.const 40
+  i32.const 20
   i32.add
   global.set $~lib/memory/__stack_pointer
   local.get $0
@@ -6046,11 +4808,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -6071,8 +4833,8 @@
    i32.const 0
    i32.lt_s
    if
-    i32.const 1696
-    i32.const 3568
+    i32.const 1328
+    i32.const 1616
     i32.const 130
     i32.const 22
     call $~lib/builtins/abort
@@ -6117,11 +4879,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -6138,8 +4900,8 @@
   i32.load offset=12
   i32.ge_u
   if
-   i32.const 1696
-   i32.const 3568
+   i32.const 1328
+   i32.const 1616
    i32.const 114
    i32.const 42
    call $~lib/builtins/abort
@@ -6161,8 +4923,8 @@
   local.get $0
   i32.eqz
   if
-   i32.const 5376
-   i32.const 3568
+   i32.const 3632
+   i32.const 1616
    i32.const 118
    i32.const 40
    call $~lib/builtins/abort
@@ -6182,11 +4944,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -6254,7 +5016,7 @@
   block $folding-inner4
    block $folding-inner1
     global.get $~lib/memory/__stack_pointer
-    i32.const 7280
+    i32.const 5084
     i32.lt_s
     br_if $folding-inner1
     global.get $~lib/memory/__stack_pointer
@@ -6272,11 +5034,11 @@
     i32.shr_u
     local.set $9
     global.get $~lib/memory/__stack_pointer
-    i32.const 6944
+    i32.const 4896
     i32.store offset=8
     block $folding-inner3
      block $folding-inner0
-      i32.const 6940
+      i32.const 4892
       i32.load
       i32.const 1
       i32.shr_u
@@ -6287,7 +5049,7 @@
        if
         global.get $~lib/memory/__stack_pointer
         i32.const 1
-        i32.const 10
+        i32.const 9
         i32.const 0
         call $~lib/rt/__newArray
         local.tee $4
@@ -6297,7 +5059,7 @@
         i32.store offset=8
         local.get $4
         i32.load offset=4
-        i32.const 3456
+        i32.const 1536
         i32.store
         br $folding-inner3
        end
@@ -6313,7 +5075,7 @@
        i32.eq
        select
        local.tee $2
-       i32.const 10
+       i32.const 9
        i32.const 0
        call $~lib/rt/__newArray
        local.tee $4
@@ -6365,7 +5127,7 @@
       end
       global.get $~lib/memory/__stack_pointer
       i32.const 0
-      i32.const 10
+      i32.const 9
       i32.const 0
       call $~lib/rt/__newArray
       local.tee $4
@@ -6375,7 +5137,7 @@
        local.get $0
        i32.store offset=8
        global.get $~lib/memory/__stack_pointer
-       i32.const 6944
+       i32.const 4896
        i32.store offset=28
        block $__inlined_func$~lib/string/String#indexOf$1 (result i32)
         global.get $~lib/memory/__stack_pointer
@@ -6383,16 +5145,16 @@
         i32.sub
         global.set $~lib/memory/__stack_pointer
         global.get $~lib/memory/__stack_pointer
-        i32.const 7280
+        i32.const 5084
         i32.lt_s
         br_if $folding-inner1
         global.get $~lib/memory/__stack_pointer
         i64.const 0
         i64.store
         global.get $~lib/memory/__stack_pointer
-        i32.const 6944
+        i32.const 4896
         i32.store
-        i32.const 6940
+        i32.const 4892
         i32.load
         i32.const 1
         i32.shr_u
@@ -6451,9 +5213,9 @@
           local.get $0
           i32.store
           global.get $~lib/memory/__stack_pointer
-          i32.const 6944
+          i32.const 4896
           i32.store offset=4
-          i32.const 6944
+          i32.const 4896
           local.set $8
           i32.const 1
           local.get $0
@@ -6496,7 +5258,7 @@
             end
            end
           end
-          block $__inlined_func$~lib/util/string/compareImpl$169
+          block $__inlined_func$~lib/util/string/compareImpl$141
            loop $while-continue|11
             local.get $1
             local.tee $3
@@ -6516,7 +5278,7 @@
              local.get $12
              local.get $13
              i32.ne
-             br_if $__inlined_func$~lib/util/string/compareImpl$169
+             br_if $__inlined_func$~lib/util/string/compareImpl$141
              local.get $7
              i32.const 2
              i32.add
@@ -6596,10 +5358,10 @@
          local.get $4
          i32.store offset=8
          global.get $~lib/memory/__stack_pointer
-         i32.const 3456
+         i32.const 1536
          i32.store offset=28
          local.get $4
-         i32.const 3456
+         i32.const 1536
          call $~lib/array/Array<~lib/string/String>#push
         end
         local.get $14
@@ -6668,24 +5430,24 @@
        local.get $4
        i32.store offset=8
        global.get $~lib/memory/__stack_pointer
-       i32.const 3456
+       i32.const 1536
        i32.store offset=28
        local.get $4
-       i32.const 3456
+       i32.const 1536
        call $~lib/array/Array<~lib/string/String>#push
       end
       br $folding-inner3
      end
      i32.const 0
-     i32.const 10
+     i32.const 9
      i32.const 0
      call $~lib/rt/__newArray
      local.set $4
     end
     br $folding-inner4
    end
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -6700,32 +5462,30 @@
  (func $assembly/asFib/asFib (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
   (local $4 f64)
-  (local $5 i32)
-  (local $6 i32)
   global.get $~lib/memory/__stack_pointer
-  i32.const 56
+  i32.const 32
   i32.sub
   global.set $~lib/memory/__stack_pointer
   block $folding-inner0
    global.get $~lib/memory/__stack_pointer
-   i32.const 7280
+   i32.const 5084
    i32.lt_s
    br_if $folding-inner0
    global.get $~lib/memory/__stack_pointer
    i32.const 0
-   i32.const 56
+   i32.const 32
    memory.fill
    local.get $0
    i32.const 0
    i32.le_s
    if
     i32.const 1
-    i32.const 10
-    i32.const 5312
+    i32.const 9
+    i32.const 3568
     call $~lib/rt/__newArray
     local.set $0
     global.get $~lib/memory/__stack_pointer
-    i32.const 56
+    i32.const 32
     i32.add
     global.set $~lib/memory/__stack_pointer
     local.get $0
@@ -6733,8 +5493,8 @@
    end
    global.get $~lib/memory/__stack_pointer
    i32.const 0
-   i32.const 10
-   i32.const 5344
+   i32.const 9
+   i32.const 3600
    call $~lib/rt/__newArray
    local.tee $3
    i32.store
@@ -6798,166 +5558,6 @@
      local.tee $2
      i32.store offset=16
      global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     call $~lib/array/Array<i32>#get:length
-     i32.const 2
-     i32.sub
-     call $~lib/util/number/itoa32
-     local.tee $5
-     i32.store offset=20
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=24
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.const 20
-     i32.sub
-     i32.load offset=16
-     i32.const 1
-     i32.shr_u
-     call $~lib/util/number/itoa32
-     local.tee $6
-     i32.store offset=28
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5584
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $5
-     i32.store offset=32
-     i32.const 5588
-     local.get $5
-     i32.store
-     i32.const 5584
-     local.get $5
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5584
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=32
-     i32.const 5596
-     local.get $1
-     i32.store
-     i32.const 5584
-     local.get $1
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5584
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $6
-     i32.store offset=32
-     i32.const 5604
-     local.get $6
-     i32.store
-     i32.const 5584
-     local.get $6
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5584
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3456
-     i32.store offset=32
-     i32.const 5584
-     call $~lib/staticarray/StaticArray<~lib/string/String>#join
-     local.set $5
-     global.get $~lib/memory/__stack_pointer
-     local.get $5
-     i32.store offset=4
-     local.get $5
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     call $~lib/array/Array<i32>#get:length
-     i32.const 1
-     i32.sub
-     call $~lib/util/number/itoa32
-     local.tee $5
-     i32.store offset=36
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     i32.store offset=40
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     i32.const 20
-     i32.sub
-     i32.load offset=16
-     i32.const 1
-     i32.shr_u
-     call $~lib/util/number/itoa32
-     local.tee $6
-     i32.store offset=44
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5680
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $5
-     i32.store offset=32
-     i32.const 5684
-     local.get $5
-     i32.store
-     i32.const 5680
-     local.get $5
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5680
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $2
-     i32.store offset=32
-     i32.const 5692
-     local.get $2
-     i32.store
-     i32.const 5680
-     local.get $2
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5680
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $6
-     i32.store offset=32
-     i32.const 5700
-     local.get $6
-     i32.store
-     i32.const 5680
-     local.get $6
-     i32.const 1
-     call $~lib/rt/itcms/__link
-     global.get $~lib/memory/__stack_pointer
-     i32.const 5680
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3456
-     i32.store offset=32
-     i32.const 5680
-     call $~lib/staticarray/StaticArray<~lib/string/String>#join
-     local.set $5
-     global.get $~lib/memory/__stack_pointer
-     local.get $5
-     i32.store offset=4
-     local.get $5
-     call $~lib/console/console.log
-     global.get $~lib/memory/__stack_pointer
      local.get $1
      i32.store offset=4
      local.get $1
@@ -6985,11 +5585,6 @@
      end
      if (result i32)
       global.get $~lib/memory/__stack_pointer
-      i32.const 5728
-      i32.store offset=4
-      i32.const 5728
-      call $~lib/console/console.log
-      global.get $~lib/memory/__stack_pointer
       local.get $1
       i32.store offset=4
       local.get $1
@@ -7011,13 +5606,13 @@
       i32.sub
       global.set $~lib/memory/__stack_pointer
       global.get $~lib/memory/__stack_pointer
-      i32.const 7280
+      i32.const 5084
       i32.lt_s
       br_if $folding-inner0
       global.get $~lib/memory/__stack_pointer
       i32.const 0
       i32.store
-      block $__inlined_func$~lib/util/number/dtoa$84
+      block $__inlined_func$~lib/util/number/dtoa$83
        local.get $4
        f64.const 0
        f64.eq
@@ -7026,9 +5621,9 @@
         i32.const 4
         i32.add
         global.set $~lib/memory/__stack_pointer
-        i32.const 5808
+        i32.const 3760
         local.set $1
-        br $__inlined_func$~lib/util/number/dtoa$84
+        br $__inlined_func$~lib/util/number/dtoa$83
        end
        local.get $4
        local.get $4
@@ -7044,22 +5639,22 @@
          i32.const 4
          i32.add
          global.set $~lib/memory/__stack_pointer
-         i32.const 5840
+         i32.const 3792
          local.set $1
-         br $__inlined_func$~lib/util/number/dtoa$84
+         br $__inlined_func$~lib/util/number/dtoa$83
         end
         global.get $~lib/memory/__stack_pointer
         i32.const 4
         i32.add
         global.set $~lib/memory/__stack_pointer
-        i32.const 5872
-        i32.const 5920
+        i32.const 3824
+        i32.const 3872
         local.get $4
         f64.const 0
         f64.lt
         select
         local.set $1
-        br $__inlined_func$~lib/util/number/dtoa$84
+        br $__inlined_func$~lib/util/number/dtoa$83
        end
        local.get $4
        call $~lib/util/number/dtoa_core
@@ -7073,7 +5668,7 @@
        local.tee $1
        i32.store
        local.get $1
-       i32.const 5952
+       i32.const 3904
        local.get $2
        memory.copy
        global.get $~lib/memory/__stack_pointer
@@ -7083,16 +5678,16 @@
       end
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.store offset=48
+      i32.store offset=24
       global.get $~lib/memory/__stack_pointer
-      i32.const 6944
-      i32.store offset=52
+      i32.const 4896
+      i32.store offset=28
       global.get $~lib/memory/__stack_pointer
       i32.const 8
       i32.sub
       global.set $~lib/memory/__stack_pointer
       global.get $~lib/memory/__stack_pointer
-      i32.const 7280
+      i32.const 5084
       i32.lt_s
       br_if $folding-inner0
       global.get $~lib/memory/__stack_pointer
@@ -7102,7 +5697,7 @@
       local.get $1
       i32.store
       global.get $~lib/memory/__stack_pointer
-      i32.const 6944
+      i32.const 4896
       i32.store offset=4
       local.get $1
       call $~lib/string/String#split
@@ -7113,28 +5708,23 @@
       global.set $~lib/memory/__stack_pointer
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.store offset=32
+      i32.store offset=20
       local.get $1
       i32.const 0
       call $~lib/array/Array<~lib/string/String>#__get
      else
       global.get $~lib/memory/__stack_pointer
-      i32.const 6976
-      i32.store offset=4
-      i32.const 6976
-      call $~lib/console/console.log
-      global.get $~lib/memory/__stack_pointer
       local.get $3
       i32.store offset=4
       global.get $~lib/memory/__stack_pointer
       local.get $1
-      i32.store offset=32
+      i32.store offset=20
       global.get $~lib/memory/__stack_pointer
       local.get $2
-      i32.store offset=48
+      i32.store offset=24
       local.get $1
       local.get $2
-      i32.const 5280
+      i32.const 3536
       i32.load
       call_indirect (type $0)
      end
@@ -7145,213 +5735,22 @@
      local.get $3
      local.get $1
      call $~lib/array/Array<~lib/string/String>#push
-     global.get $~lib/memory/__stack_pointer
-     i32.const 7056
-     i32.store offset=8
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store offset=48
-     global.get $~lib/memory/__stack_pointer
-     i32.const 8
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 7280
-     i32.lt_s
-     br_if $folding-inner0
-     global.get $~lib/memory/__stack_pointer
-     i64.const 0
-     i64.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3616
-     i32.store offset=4
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4
-     i32.sub
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 7280
-     i32.lt_s
-     br_if $folding-inner0
-     global.get $~lib/memory/__stack_pointer
-     i32.const 0
-     i32.store
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store
-     local.get $3
-     i32.load offset=4
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $3
-     i32.store
-     local.get $3
-     i32.load offset=12
-     local.set $2
-     global.get $~lib/memory/__stack_pointer
-     i32.const 3616
-     i32.store
-     local.get $1
-     local.get $2
-     i32.const 3616
-     call $~lib/util/string/joinStringArray
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     i32.const 4
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     i32.const 8
-     i32.add
-     global.set $~lib/memory/__stack_pointer
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=32
-     i32.const 7056
-     local.get $1
-     call $~lib/string/String#concat
-     local.set $1
-     global.get $~lib/memory/__stack_pointer
-     local.get $1
-     i32.store offset=4
-     local.get $1
-     call $~lib/console/console.log
      br $while-continue|0
     end
    end
    global.get $~lib/memory/__stack_pointer
-   i32.const 56
+   i32.const 32
    i32.add
    global.set $~lib/memory/__stack_pointer
    local.get $3
    return
   end
-  i32.const 40080
-  i32.const 40128
+  i32.const 37872
+  i32.const 37920
   i32.const 1
   i32.const 1
   call $~lib/builtins/abort
   unreachable
- )
- (func $~lib/util/number/itoa32 (param $0 i32) (result i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.store
-  local.get $0
-  i32.eqz
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   i32.const 1472
-   return
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  local.get $0
-  i32.sub
-  local.get $0
-  local.get $0
-  i32.const 31
-  i32.shr_u
-  i32.const 1
-  i32.shl
-  local.tee $0
-  select
-  local.tee $2
-  i32.const 100000
-  i32.lt_u
-  if (result i32)
-   local.get $2
-   i32.const 100
-   i32.lt_u
-   if (result i32)
-    local.get $2
-    i32.const 10
-    i32.ge_u
-    i32.const 1
-    i32.add
-   else
-    local.get $2
-    i32.const 10000
-    i32.ge_u
-    i32.const 3
-    i32.add
-    local.get $2
-    i32.const 1000
-    i32.ge_u
-    i32.add
-   end
-  else
-   local.get $2
-   i32.const 10000000
-   i32.lt_u
-   if (result i32)
-    local.get $2
-    i32.const 1000000
-    i32.ge_u
-    i32.const 6
-    i32.add
-   else
-    local.get $2
-    i32.const 1000000000
-    i32.ge_u
-    i32.const 8
-    i32.add
-    local.get $2
-    i32.const 100000000
-    i32.ge_u
-    i32.add
-   end
-  end
-  local.tee $1
-  i32.const 1
-  i32.shl
-  local.get $0
-  i32.add
-  i32.const 2
-  call $~lib/rt/itcms/__new
-  local.tee $3
-  i32.store
-  local.get $0
-  local.get $3
-  i32.add
-  local.get $2
-  local.get $1
-  call $~lib/util/number/utoa32_dec_lut
-  local.get $0
-  if
-   local.get $3
-   i32.const 45
-   i32.store16
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $3
  )
  (func $~lib/rt/__newArray (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   (local $3 i32)
@@ -7362,11 +5761,11 @@
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
@@ -7419,294 +5818,17 @@
   global.set $~lib/memory/__stack_pointer
   local.get $1
  )
- (func $~lib/util/number/itoa64 (param $0 i64) (result i32)
-  (local $1 i32)
-  (local $2 i32)
-  (local $3 i32)
-  (local $4 i32)
-  (local $5 i32)
-  (local $6 i32)
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.sub
-  global.set $~lib/memory/__stack_pointer
-  global.get $~lib/memory/__stack_pointer
-  i32.const 7280
-  i32.lt_s
-  if
-   i32.const 40080
-   i32.const 40128
-   i32.const 1
-   i32.const 1
-   call $~lib/builtins/abort
-   unreachable
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 0
-  i32.store
-  local.get $0
-  i64.eqz
-  if
-   global.get $~lib/memory/__stack_pointer
-   i32.const 4
-   i32.add
-   global.set $~lib/memory/__stack_pointer
-   i32.const 1472
-   return
-  end
-  i64.const 0
-  local.get $0
-  i64.sub
-  local.get $0
-  local.get $0
-  i64.const 63
-  i64.shr_u
-  i32.wrap_i64
-  i32.const 1
-  i32.shl
-  local.tee $2
-  select
-  local.tee $0
-  i64.const 4294967295
-  i64.le_u
-  if
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i32.wrap_i64
-   local.tee $1
-   i32.const 100000
-   i32.lt_u
-   if (result i32)
-    local.get $1
-    i32.const 100
-    i32.lt_u
-    if (result i32)
-     local.get $1
-     i32.const 10
-     i32.ge_u
-     i32.const 1
-     i32.add
-    else
-     local.get $1
-     i32.const 10000
-     i32.ge_u
-     i32.const 3
-     i32.add
-     local.get $1
-     i32.const 1000
-     i32.ge_u
-     i32.add
-    end
-   else
-    local.get $1
-    i32.const 10000000
-    i32.lt_u
-    if (result i32)
-     local.get $1
-     i32.const 1000000
-     i32.ge_u
-     i32.const 6
-     i32.add
-    else
-     local.get $1
-     i32.const 1000000000
-     i32.ge_u
-     i32.const 8
-     i32.add
-     local.get $1
-     i32.const 100000000
-     i32.ge_u
-     i32.add
-    end
-   end
-   local.tee $4
-   i32.const 1
-   i32.shl
-   local.get $2
-   i32.add
-   i32.const 2
-   call $~lib/rt/itcms/__new
-   local.tee $3
-   i32.store
-   local.get $2
-   local.get $3
-   i32.add
-   local.get $1
-   local.get $4
-   call $~lib/util/number/utoa32_dec_lut
-  else
-   global.get $~lib/memory/__stack_pointer
-   local.get $0
-   i64.const 1000000000000000
-   i64.lt_u
-   if (result i32)
-    local.get $0
-    i64.const 1000000000000
-    i64.lt_u
-    if (result i32)
-     local.get $0
-     i64.const 100000000000
-     i64.ge_u
-     i32.const 10
-     i32.add
-     local.get $0
-     i64.const 10000000000
-     i64.ge_u
-     i32.add
-    else
-     local.get $0
-     i64.const 100000000000000
-     i64.ge_u
-     i32.const 13
-     i32.add
-     local.get $0
-     i64.const 10000000000000
-     i64.ge_u
-     i32.add
-    end
-   else
-    local.get $0
-    i64.const 100000000000000000
-    i64.lt_u
-    if (result i32)
-     local.get $0
-     i64.const 10000000000000000
-     i64.ge_u
-     i32.const 16
-     i32.add
-    else
-     local.get $0
-     i64.const -8446744073709551616
-     i64.ge_u
-     i32.const 18
-     i32.add
-     local.get $0
-     i64.const 1000000000000000000
-     i64.ge_u
-     i32.add
-    end
-   end
-   local.tee $1
-   i32.const 1
-   i32.shl
-   local.get $2
-   i32.add
-   i32.const 2
-   call $~lib/rt/itcms/__new
-   local.tee $3
-   i32.store
-   local.get $2
-   local.get $3
-   i32.add
-   local.set $5
-   loop $while-continue|0
-    local.get $0
-    i64.const 100000000
-    i64.ge_u
-    if
-     local.get $5
-     local.get $1
-     i32.const 4
-     i32.sub
-     local.tee $1
-     i32.const 1
-     i32.shl
-     i32.add
-     local.get $0
-     local.get $0
-     i64.const 100000000
-     i64.div_u
-     local.tee $0
-     i64.const 100000000
-     i64.mul
-     i64.sub
-     i32.wrap_i64
-     local.tee $4
-     i32.const 10000
-     i32.rem_u
-     local.tee $6
-     i32.const 100
-     i32.div_u
-     i32.const 2
-     i32.shl
-     i32.const 1884
-     i32.add
-     i64.load32_u
-     local.get $6
-     i32.const 100
-     i32.rem_u
-     i32.const 2
-     i32.shl
-     i32.const 1884
-     i32.add
-     i64.load32_u
-     i64.const 32
-     i64.shl
-     i64.or
-     i64.store
-     local.get $5
-     local.get $1
-     i32.const 4
-     i32.sub
-     local.tee $1
-     i32.const 1
-     i32.shl
-     i32.add
-     local.get $4
-     i32.const 10000
-     i32.div_u
-     local.tee $4
-     i32.const 100
-     i32.div_u
-     i32.const 2
-     i32.shl
-     i32.const 1884
-     i32.add
-     i64.load32_u
-     local.get $4
-     i32.const 100
-     i32.rem_u
-     i32.const 2
-     i32.shl
-     i32.const 1884
-     i32.add
-     i64.load32_u
-     i64.const 32
-     i64.shl
-     i64.or
-     i64.store
-     br $while-continue|0
-    end
-   end
-   local.get $5
-   local.get $0
-   i32.wrap_i64
-   local.get $1
-   call $~lib/util/number/utoa32_dec_lut
-  end
-  local.get $2
-  if
-   local.get $3
-   i32.const 45
-   i32.store16
-  end
-  global.get $~lib/memory/__stack_pointer
-  i32.const 4
-  i32.add
-  global.set $~lib/memory/__stack_pointer
-  local.get $3
- )
  (func $export:assembly/asFib/asFib (param $0 i32) (param $1 i32) (param $2 i32) (result i32)
   global.get $~lib/memory/__stack_pointer
   i32.const 8
   i32.sub
   global.set $~lib/memory/__stack_pointer
   global.get $~lib/memory/__stack_pointer
-  i32.const 7280
+  i32.const 5084
   i32.lt_s
   if
-   i32.const 40080
-   i32.const 40128
+   i32.const 37872
+   i32.const 37920
    i32.const 1
    i32.const 1
    call $~lib/builtins/abort
