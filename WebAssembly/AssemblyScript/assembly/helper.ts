@@ -62,11 +62,11 @@ const i32ArrayToString = (i32Array: i32[]): string => {
   console.log(`***** length::${length}`);
   let result: string = '';
 
-  // for (let i: i32 = 0; i < length; i++) {
   for (let i: i32 = length - 1; i >= 0; i--) {
     console.log(`***** i:: ${i}`);
     console.log(`********** i32Array[${i}]:: ${i32Array[i]}`);
-    result += i32Array[i].toString();
+    let tempStr = i32Array[i].toString();
+    result += i === length - 1 ? tempStr : tempStr.padStart(9, '0');
     console.log(`********** result:: ${result}`);
   };
   return result;
