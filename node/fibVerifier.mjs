@@ -38,6 +38,7 @@ try {
     }
     utils.printProgress(indx + 3, aFib.length - 1);
   });
+  console.log(`\nLast record size:: ${aFib[aFib.length - 1].length}`);
 } catch (error) {
   console.error(error);
   process.exit(1);
