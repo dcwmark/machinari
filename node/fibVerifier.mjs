@@ -19,7 +19,6 @@ try {
 }
 
 const aFib = [];
-console.log(`Here fn::${fileName}`);
 const data = fs.readFileSync(fileName, 'utf8');
 data.split('\n').forEach((line) => {
   aFib.push(line.trim());
