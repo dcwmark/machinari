@@ -24,6 +24,12 @@ data.split('\n').forEach((line) => {
   aFib.push(line.trim());
 });
 
+const lastEmpty = aFib.pop();
+if (lastEmpty) {
+  console.error(`Last slot is not empty::${lastEmpty}`);
+  process.exit(1);
+}
+
 try {
   aFib.map((each, indx, array) => {
     if (indx > aFib.length - 4) return;
@@ -38,7 +44,7 @@ try {
     }
     utils.printProgress(indx + 3, aFib.length - 1);
   });
-  console.log(`\nLast record size:: ${aFib[aFib.length - 1].length}`);
+  console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
 } catch (error) {
   console.error(error);
   process.exit(1);
