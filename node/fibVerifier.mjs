@@ -19,9 +19,18 @@ try {
 }
 
 const aFib = [];
-const data = fs.readFileSync(fileName, 'utf8');
-data.split('\n').forEach((line) => {
-  aFib.push(line.trim());
+const readStream = fs.createReadStream(fileName, 'utf8');
+
+readStream.on('data', (chunk) => {
+  aFib.push(chunk);
+});
+
+readStream.on('end', () => {
+  console.log('\nFile data read successfully.');
+});
+
+readStream.on('error', (err) => {
+  console.error(`\nError in reading file `, err);
 });
 
 const lastEmpty = aFib.pop();
