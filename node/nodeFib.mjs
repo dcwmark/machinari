@@ -33,8 +33,16 @@ const arrStr = aFib.map(each => each.toString());
 const filePath = fileURLToPath(import.meta.url).split('/');
 const fileName = filePath[filePath.length - 1];
 const outFileName = `${fileName.split('.')[0]}.dat`;
+
 try {
-  fs.writeFileSync(outFileName, arrStr.join('\n') + '\n');
+  const writeStream = fs.createWriteStream(outFileName);
+
+  arrStr.forEach(line => {
+    writeStream.write(line + '\n');
+  });
+
+  writeStream.end(); // Signal the end of the file
+
   console.log(`\nFile out:: ${outFileName}`);
 } catch (err) {
   console.error(`\nError in writing file `, err);
