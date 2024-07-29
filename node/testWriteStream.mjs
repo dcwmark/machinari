@@ -1,4 +1,4 @@
-// node/fibVerifier.mjs
+// node/fibVerufier.mjs
 
 'use strict';
 
@@ -20,7 +20,7 @@ try {
 }
 
 const aFib = [];
-const rs = fs.createReadStream(fileName);
+const rs = fs.createReadStream('wasmFib.dat');
 
 rs.on('data', (chunk) => {
   console.log(`\nA chunk::${chunk}`);
@@ -42,7 +42,6 @@ if (lastEmpty) {
 }
 
 try {
-  console.log(`In like flint::${aFib} !#!#!#`);
   aFib.map((each, indx, array) => {
     if (indx > aFib.length - 4) return;
     const left = utils.addStrings(each, array[indx + 1]);
@@ -58,13 +57,12 @@ try {
   });
   if (aFib.length > 0) {
     console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
-    console.log(`\nVerified!`);
   } else {
     console.warn(`Empty aFib`);
   }
-  // process.exit(0);
 } catch (error) {
   console.error(error);
   process.exit(1);
 }
 
+console.log(`aFib::`, aFib);
