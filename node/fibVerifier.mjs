@@ -3,6 +3,8 @@
 'use strict';
 
 import fs from 'fs';
+import path from 'path';
+import { fileURLToPath } from 'url';
 
 import utils from '../common/utils.js';
 
@@ -19,9 +21,17 @@ try {
 }
 
 const aFib = [];
-const readStream = fs.createReadStream(fileName, 'utf8');
+const __filename = fileURLToPath(import.meta.url); // get the resolved path to the file
+const __dirname = path.dirname(__filename); // get the name of the directory
+const readStream = fs.createReadStream(__dirname + '/' + fileName, 'utf8');
+
+// readStream.on('readable', () => {
+//   var buff = rs.read(8); //Read first 8 bytes only once
+//   console.log(buff.toString());
+// });
 
 readStream.on('data', (chunk) => {
+  console.log(`\nA chunk::${chunk}`);
   aFib.push(chunk);
 });
 
@@ -53,7 +63,11 @@ try {
     }
     utils.printProgress(indx + 3, aFib.length - 1);
   });
-  console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
+  if (aFib.length > 0) {
+    console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
+  } else {
+    console.warn(`Empty aFib`);
+  }
 } catch (error) {
   console.error(error);
   process.exit(1);
