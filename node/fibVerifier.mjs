@@ -3,6 +3,7 @@
 'use strict';
 
 import fs from 'fs';
+import readline from 'readline';
 
 import utils from '../common/utils.js';
 
@@ -21,17 +22,21 @@ try {
 
 const aFib = [];
 const rs = fs.createReadStream(fileName);
-
-rs.on('data', (chunk) => {
-  console.log(`\nA chunk::${chunk}`);
-  aFib.push(chunk);
+const rl = readline.createInterface({
+  input: rs,
+  crlfDelay: Infinity
 });
 
-rs.on('end', () => {
+rl.on('line', (line) => {
+  aFib.push(line);
+});
+
+rl.on('close', () => {
   console.log('\nFile data read successfully.');
+  verify();
 });
 
-rs.on('error', (err) => {
+rl.on('error', (err) => {
   console.error(`\nError in reading file `, err);
 });
 
@@ -41,30 +46,30 @@ if (lastEmpty) {
   process.exit(1);
 }
 
-try {
-  console.log(`In like flint::${aFib} !#!#!#`);
-  aFib.map((each, indx, array) => {
-    if (indx > aFib.length - 4) return;
-    const left = utils.addStrings(each, array[indx + 1]);
-    const right = array[indx + 2];
-    if (left !== right) {
-      throw new Error(`
-           indx[${indx}]::|${each}|
-         + indx[${indx + 1}]::|${array[indx + 1]}|
-        != indx[${indx + 2}]::|${array[indx + 2]}|
-      `);
+const verify = () => {
+  try {
+    aFib.map((each, indx, array) => {
+      if (indx > aFib.length - 4) return;
+      const left = utils.addStrings(each, array[indx + 1]);
+      const right = array[indx + 2];
+      if (left !== right) {
+        throw new Error(`
+            indx[${indx}]::|${each}|
+          + indx[${indx + 1}]::|${array[indx + 1]}|
+          != indx[${indx + 2}]::|${array[indx + 2]}|
+        `);
+      }
+      utils.printProgress(indx + 3, aFib.length);
+    });
+    if (aFib.length > 0) {
+      console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
+      console.log(`\nVerified!`);
+    } else {
+      console.warn(`Empty aFib`);
     }
-    utils.printProgress(indx + 3, aFib.length - 1);
-  });
-  if (aFib.length > 0) {
-    console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
-    console.log(`\nVerified!`);
-  } else {
-    console.warn(`Empty aFib`);
+    process.exit(0);
+  } catch (error) {
+    console.error(error);
+    process.exit(1);
   }
-  // process.exit(0);
-} catch (error) {
-  console.error(error);
-  process.exit(1);
-}
-
+};
