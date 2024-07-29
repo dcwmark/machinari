@@ -59,7 +59,7 @@ const verify = () => {
           != indx[${indx + 2}]::|${array[indx + 2]}|
         `);
       }
-      utils.printProgress(indx + 3, aFib.length);
+      utils.printProgress(indx + 4, aFib.length);
     });
     if (aFib.length > 0) {
       console.log(`\nLast fib size:: ${aFib[aFib.length - 1].length}`);
