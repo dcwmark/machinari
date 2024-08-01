@@ -37,19 +37,14 @@ export function asFib(n: i32, a: string, b: string): string[] {
   while(aFib.length < n) {
     const aa = aFib[aFib.length - 2];
     const bb = aFib[aFib.length - 1];
-    // console.log(`aFib[${aFib.length - 2}]:: ${aa} aa.length::${aa.length}`);
-    // console.log(`aFib[${aFib.length - 1}]:: ${bb} bb.length::${bb.length}`);
 
-    if (aa.length < 9
-     && bb.length < 9) {
-      // console.log(`********** small enough`);
+    if (aa.length < 10
+     && bb.length < 10) {
       const sum = parseInt(aa) + parseInt(bb);
       aFib.push((sum.toString().split('.')[0]));
     } else {
-      // console.log(`********** largeNumberAddition`);
       aFib.push(largeNumberAddition(aa, bb));
     }
-    // console.log(`########## aFib:: ${aFib}`);
   }
 
   return aFib;
