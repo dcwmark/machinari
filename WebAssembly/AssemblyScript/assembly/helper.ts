@@ -51,16 +51,16 @@ const i32ArrayToString = (i32Array: i32[]): string => {
   return result;
 };
 
-export const largeNumberAddition = (a: string, b: string): string => {
-  const aa: f64 = f64.parse(a);
-  const bb: f64 = f64.parse(b);
-  const sum: f64 = aa + bb;
-  return sum.toString();
-};
-
 // export const largeNumberAddition = (a: string, b: string): string => {
-//   const aa: i32[] = largeNumberToI32Array(a);
-//   const bb: i32[] = largeNumberToI32Array(b);
-//   const arraySum: i32[] = arrayAddition(aa, bb);
-//   return i32ArrayToString(arraySum);
+//   const aa: f64 = f64.parse(a);
+//   const bb: f64 = f64.parse(b);
+//   const sum: f64 = aa + bb;
+//   return sum.toString();
 // };
+
+export const largeNumberAddition = (a: string, b: string): string => {
+  const aa: i32[] = largeNumberToI32Array(a);
+  const bb: i32[] = largeNumberToI32Array(b);
+  const arraySum: i32[] = arrayAddition(aa, bb);
+  return i32ArrayToString(arraySum);
+};

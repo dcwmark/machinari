@@ -30,6 +30,9 @@ import { largeNumberAddition } from "./helper";
 export function asFib(n: i32, a: string, b: string): string[] {
   if (n <= 0) return ['0'];
 
+  const HALF_SAFE_INT: i64 = i64(Number.MAX_SAFE_INTEGER / 256);
+  console.log(`***** MAX_SAFE_INTEGER::${Number.MAX_SAFE_INTEGER}`);
+  console.log(`***** HALF SAVE INT::${HALF_SAFE_INT}`);
   const aFib: string[] = [];
   aFib[0] = a;
   aFib[1] = b;
@@ -38,8 +41,8 @@ export function asFib(n: i32, a: string, b: string): string[] {
     const aa = aFib[aFib.length - 2];
     const bb = aFib[aFib.length - 1];
 
-    if (aa.length < 10
-     && bb.length < 10) {
+    if (aa.length < HALF_SAFE_INT
+     && bb.length < HALF_SAFE_INT) {
       const sum = parseInt(aa) + parseInt(bb);
       aFib.push((sum.toString().split('.')[0]));
     } else {
